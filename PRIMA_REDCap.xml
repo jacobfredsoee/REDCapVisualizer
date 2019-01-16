@@ -1,0 +1,1980 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ODM xmlns="http://www.cdisc.org/ns/odm/v1.3" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:redcap="https://projectredcap.org" xsi:schemaLocation="http://www.cdisc.org/ns/odm/v1.3 schema/odm/ODM1-3-1.xsd" ODMVersion="1.3.1" FileOID="000-00-0000" FileType="Snapshot" Description="PRIMA" AsOfDateTime="2019-01-16T15:11:49" CreationDateTime="2019-01-16T15:11:49" SourceSystem="REDCap" SourceSystemVersion="8.5.22">
+<Study OID="Project.PRIMA">
+<GlobalVariables>
+	<StudyName>PRIMA</StudyName>
+	<StudyDescription>This file contains the metadata, events, and data for REDCap project "PRIMA".</StudyDescription>
+	<ProtocolName>PRIMA</ProtocolName>
+	<redcap:RecordAutonumberingEnabled>0</redcap:RecordAutonumberingEnabled>
+	<redcap:CustomRecordLabel>[first-event-name][patient_fnavn] [first-event-name][patient_enavn]</redcap:CustomRecordLabel>
+	<redcap:SecondaryUniqueField>patient_cpr</redcap:SecondaryUniqueField>
+	<redcap:SchedulingEnabled>0</redcap:SchedulingEnabled>
+	<redcap:Purpose>2</redcap:Purpose>
+	<redcap:PurposeOther>1</redcap:PurposeOther>
+	<redcap:ProjectNotes>Tidlig og præcis opsporing af prostatakræft i almen praksis med nye biomarkører og multiparametrisk MR skanning (PRIMA)</redcap:ProjectNotes>
+	<redcap:RepeatingInstrumentsAndEvents>
+		<redcap:RepeatingInstruments>
+			<redcap:RepeatingInstrument redcap:UniqueEventName="prima_arm_1" redcap:RepeatInstrument="almen_praksis_prver" redcap:CustomLabel="Prøvetagningsdato: [ap_tagningsdato]&lt;br&gt;Modtagelsesdato: [ap_modtaget_dato]"/>
+			<redcap:RepeatingInstrument redcap:UniqueEventName="prima_arm_1" redcap:RepeatInstrument="biokemisk_svar_psa" redcap:CustomLabel="PSA: [biokemi_psa_psa_korrigeret] ng/µl.&lt;br&gt;Svar ([biokemi_psa_svarkode]) afgivet: [biokemi_psa_svar], [biokemi_psa_svardato]"/>
+			<redcap:RepeatingInstrument redcap:UniqueEventName="prima_arm_1" redcap:RepeatInstrument="biokemisk_svar_sthlm3" redcap:CustomLabel="STHLM: [biokemi_sthlm3_sthlm3] ([biokemi_sthlm3_score]%).&lt;br&gt;Svar ([biokemi_sthml3_svarkode]) afgivet: [biokemi_sthlm3_svar], [biokemi_sthml_svardato]"/>
+		</redcap:RepeatingInstruments>
+		<redcap:RepeatingInstruments>
+			<redcap:RepeatingInstrument redcap:UniqueEventName="mri_arm_1" redcap:RepeatInstrument="mri_scanning" redcap:CustomLabel="[mr_dato]: [mr_prostata_volumen] cm&lt;sup&gt;3&lt;/sup&gt;"/>
+			<redcap:RepeatingInstrument redcap:UniqueEventName="mri_arm_1" redcap:RepeatInstrument="lsion" redcap:CustomLabel="[lesion_dato]: [lesion_volumen] mm&lt;sup&gt;3&lt;/sup&gt;,  PiRADS (pakke a, b, c): [lesion_pirads_a], [lesion_pirads_b], [lesion_pirads_c]"/>
+		</redcap:RepeatingInstruments>
+		<redcap:RepeatingInstruments>
+			<redcap:RepeatingInstrument redcap:UniqueEventName="noter_arm_1" redcap:RepeatInstrument="noter" redcap:CustomLabel="[note_dato]: [note_note]"/>
+			<redcap:RepeatingInstrument redcap:UniqueEventName="noter_arm_1" redcap:RepeatInstrument="flag" redcap:CustomLabel="[flag_dato]: [flag_problem]"/>
+		</redcap:RepeatingInstruments>
+	</redcap:RepeatingInstrumentsAndEvents>
+</GlobalVariables>
+<MetaDataVersion OID="Metadata.PRIMA_2019-01-16_1511" Name="PRIMA" redcap:RecordIdField="record_id">
+	<Protocol>
+		<StudyEventRef StudyEventOID="Event.prima_arm_1" OrderNumber="1" Mandatory="No"/>
+		<StudyEventRef StudyEventOID="Event.mri_arm_1" OrderNumber="2" Mandatory="No"/>
+		<StudyEventRef StudyEventOID="Event.noter_arm_1" OrderNumber="3" Mandatory="No"/>
+	</Protocol>
+	<StudyEventDef OID="Event.prima_arm_1" Name="PRIMA" Type="Common" Repeating="No" redcap:EventName="PRIMA" redcap:CustomEventLabel="" redcap:UniqueEventName="prima_arm_1" redcap:ArmNum="1" redcap:ArmName="Arm 1" redcap:DayOffset="1" redcap:OffsetMin="0" redcap:OffsetMax="0">
+		<FormRef FormOID="Form.patient_information" OrderNumber="1" Mandatory="No" redcap:FormName="patient_information"/>
+		<FormRef FormOID="Form.almen_praksis_prver" OrderNumber="2" Mandatory="No" redcap:FormName="almen_praksis_prver"/>
+		<FormRef FormOID="Form.biokemisk_svar_psa" OrderNumber="3" Mandatory="No" redcap:FormName="biokemisk_svar_psa"/>
+		<FormRef FormOID="Form.biokemisk_svar_sthlm3" OrderNumber="4" Mandatory="No" redcap:FormName="biokemisk_svar_sthlm3"/>
+	</StudyEventDef>
+	<StudyEventDef OID="Event.mri_arm_1" Name="MRI" Type="Common" Repeating="No" redcap:EventName="MRI" redcap:CustomEventLabel="" redcap:UniqueEventName="mri_arm_1" redcap:ArmNum="1" redcap:ArmName="Arm 1" redcap:DayOffset="2" redcap:OffsetMin="0" redcap:OffsetMax="0">
+		<FormRef FormOID="Form.mri_scanning" OrderNumber="1" Mandatory="No" redcap:FormName="mri_scanning"/>
+		<FormRef FormOID="Form.lsion" OrderNumber="2" Mandatory="No" redcap:FormName="lsion"/>
+	</StudyEventDef>
+	<StudyEventDef OID="Event.noter_arm_1" Name="Noter" Type="Common" Repeating="No" redcap:EventName="Noter" redcap:CustomEventLabel="" redcap:UniqueEventName="noter_arm_1" redcap:ArmNum="1" redcap:ArmName="Arm 1" redcap:DayOffset="3" redcap:OffsetMin="0" redcap:OffsetMax="0">
+		<FormRef FormOID="Form.noter" OrderNumber="1" Mandatory="No" redcap:FormName="noter"/>
+		<FormRef FormOID="Form.flag" OrderNumber="2" Mandatory="No" redcap:FormName="flag"/>
+	</StudyEventDef>
+	<FormDef OID="Form.patient_information" Name="Patient information" Repeating="No" redcap:FormName="patient_information">
+		<ItemGroupRef ItemGroupOID="patient_information.record_id" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="patient_information.patient_information_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.almen_praksis_prver" Name="Almen praksis prøver" Repeating="No" redcap:FormName="almen_praksis_prver">
+		<ItemGroupRef ItemGroupOID="almen_praksis_prver.ap_samples_transferred" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="almen_praksis_prver.ap_tagningsdato" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="almen_praksis_prver.sthlm3_pcfamilie" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="almen_praksis_prver.sthml3_5alfa" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="almen_praksis_prver.almen_praksis_prver_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.biokemisk_svar_psa" Name="Biokemisk svar - PSA" Repeating="No" redcap:FormName="biokemisk_svar_psa">
+		<ItemGroupRef ItemGroupOID="biokemisk_svar_psa.biokemi_psa_psa" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="biokemisk_svar_psa.biokemisk_svar_psa_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.biokemisk_svar_sthlm3" Name="Biokemisk svar - STHLM3" Repeating="No" redcap:FormName="biokemisk_svar_sthlm3">
+		<ItemGroupRef ItemGroupOID="biokemisk_svar_sthlm3.biokemi_sthlm3_sthlm3" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="biokemisk_svar_sthlm3.biokemisk_svar_sthlm3_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.mri_scanning" Name="MRI scanning" Repeating="No" redcap:FormName="mri_scanning">
+		<ItemGroupRef ItemGroupOID="mri_scanning.mr_dato" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="mri_scanning.mri_scanning_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.lsion" Name="Læsion" Repeating="No" redcap:FormName="lsion">
+		<ItemGroupRef ItemGroupOID="lsion.lesion_dato" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="lsion.lesion_t2_a" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="lsion.lesion_dwi_a" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="lsion.lesion_apex_l_a___1" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="lsion.lesion_mid_l_a___1" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="lsion.lesion_size_cc" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="lsion.lesion_size_ap" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="lsion.lesion_t2_b" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="lsion.lesion_dwi_b" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="lsion.lesion_apex_l_b___1" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="lsion.lesion_mid_l_b___1" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="lsion.lesion_t2_c" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="lsion.lesion_dwi_c" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="lsion.lesion_apex_l_c___1" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="lsion.lesion_mid_l_c___1" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="lsion.mrgb_dato" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="lsion.mrgb_antal" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="lsion.lsion_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.noter" Name="Noter" Repeating="No" redcap:FormName="noter">
+		<ItemGroupRef ItemGroupOID="noter.note_dato" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="noter.noter_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.flag" Name="Flag" Repeating="No" redcap:FormName="flag">
+		<ItemGroupRef ItemGroupOID="flag.flag_dato" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="flag.flag_complete" Mandatory="No"/>
+	</FormDef>
+	<ItemGroupDef OID="patient_information.record_id" Name="Patient information" Repeating="No">
+		<ItemRef ItemOID="record_id" Mandatory="No" redcap:Variable="record_id"/>
+		<ItemRef ItemOID="patient_fnavn" Mandatory="Yes" redcap:Variable="patient_fnavn"/>
+		<ItemRef ItemOID="patient_enavn" Mandatory="Yes" redcap:Variable="patient_enavn"/>
+		<ItemRef ItemOID="patient_cpr" Mandatory="Yes" redcap:Variable="patient_cpr"/>
+		<ItemRef ItemOID="patient_samtykke_dato" Mandatory="Yes" redcap:Variable="patient_samtykke_dato"/>
+		<ItemRef ItemOID="patient_samtykke" Mandatory="Yes" redcap:Variable="patient_samtykke"/>
+		<ItemRef ItemOID="patient_samtykke_scan" Mandatory="No" redcap:Variable="patient_samtykke_scan"/>
+		<ItemRef ItemOID="patient_samtykke_inform" Mandatory="Yes" redcap:Variable="patient_samtykke_inform"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="patient_information.patient_information_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="patient_information_complete" Mandatory="No" redcap:Variable="patient_information_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="almen_praksis_prver.ap_samples_transferred" Name="Prøve informationer" Repeating="No">
+		<ItemRef ItemOID="ap_samples_transferred" Mandatory="No" redcap:Variable="ap_samples_transferred"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="almen_praksis_prver.ap_tagningsdato" Name="Almen praksis prøver" Repeating="No">
+		<ItemRef ItemOID="ap_tagningsdato" Mandatory="Yes" redcap:Variable="ap_tagningsdato"/>
+		<ItemRef ItemOID="ap_modtaget_dato" Mandatory="Yes" redcap:Variable="ap_modtaget_dato"/>
+		<ItemRef ItemOID="ap_ydernummer" Mandatory="Yes" redcap:Variable="ap_ydernummer"/>
+		<ItemRef ItemOID="ap_praksis" Mandatory="No" redcap:Variable="ap_praksis"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="almen_praksis_prver.sthlm3_pcfamilie" Name="STHLM3 oplysninger" Repeating="No">
+		<ItemRef ItemOID="sthlm3_pcfamilie" Mandatory="Yes" redcap:Variable="sthlm3_pcfamilie"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="almen_praksis_prver.sthml3_5alfa" Name="Almen praksis prøver" Repeating="No">
+		<ItemRef ItemOID="sthml3_5alfa" Mandatory="Yes" redcap:Variable="sthml3_5alfa"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="almen_praksis_prver.almen_praksis_prver_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="almen_praksis_prver_complete" Mandatory="No" redcap:Variable="almen_praksis_prver_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="biokemisk_svar_psa.biokemi_psa_psa" Name="Biokemisk svar - PSA" Repeating="No">
+		<ItemRef ItemOID="biokemi_psa_psa" Mandatory="Yes" redcap:Variable="biokemi_psa_psa"/>
+		<ItemRef ItemOID="biokemi_psa_psa_korrigeret" Mandatory="No" redcap:Variable="biokemi_psa_psa_korrigeret"/>
+		<ItemRef ItemOID="biokemi_psa_svarkode" Mandatory="No" redcap:Variable="biokemi_psa_svarkode"/>
+		<ItemRef ItemOID="biokemi_psa_svarkodep0" Mandatory="No" redcap:Variable="biokemi_psa_svarkodep0"/>
+		<ItemRef ItemOID="biokemi_psa_svarkodep1" Mandatory="No" redcap:Variable="biokemi_psa_svarkodep1"/>
+		<ItemRef ItemOID="biokemi_psa_svarkodep3" Mandatory="No" redcap:Variable="biokemi_psa_svarkodep3"/>
+		<ItemRef ItemOID="biokemi_psa_svarkodep10" Mandatory="No" redcap:Variable="biokemi_psa_svarkodep10"/>
+		<ItemRef ItemOID="labka_psa_svarkode_px" Mandatory="No" redcap:Variable="labka_psa_svarkode_px"/>
+		<ItemRef ItemOID="biokemi_psa_svar" Mandatory="Yes" redcap:Variable="biokemi_psa_svar"/>
+		<ItemRef ItemOID="biokemi_psa_svardato" Mandatory="No" redcap:Variable="biokemi_psa_svardato"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="biokemisk_svar_psa.biokemisk_svar_psa_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="biokemisk_svar_psa_complete" Mandatory="No" redcap:Variable="biokemisk_svar_psa_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="biokemisk_svar_sthlm3.biokemi_sthlm3_sthlm3" Name="Biokemisk svar - STHLM3" Repeating="No">
+		<ItemRef ItemOID="biokemi_sthlm3_sthlm3" Mandatory="Yes" redcap:Variable="biokemi_sthlm3_sthlm3"/>
+		<ItemRef ItemOID="biokemi_sthlm3_score" Mandatory="Yes" redcap:Variable="biokemi_sthlm3_score"/>
+		<ItemRef ItemOID="biokemi_sthml3_psa" Mandatory="Yes" redcap:Variable="biokemi_sthml3_psa"/>
+		<ItemRef ItemOID="biokemi_sthml3_svarkode" Mandatory="No" redcap:Variable="biokemi_sthml3_svarkode"/>
+		<ItemRef ItemOID="biokemi_sthlm3_svar_snp1" Mandatory="No" redcap:Variable="biokemi_sthlm3_svar_snp1"/>
+		<ItemRef ItemOID="biokemi_sthlm3_svar_snp3" Mandatory="No" redcap:Variable="biokemi_sthlm3_svar_snp3"/>
+		<ItemRef ItemOID="biokemi_sthlm3_svar_spp1" Mandatory="No" redcap:Variable="biokemi_sthlm3_svar_spp1"/>
+		<ItemRef ItemOID="biokemi_sthlm3_svar_spp3" Mandatory="No" redcap:Variable="biokemi_sthlm3_svar_spp3"/>
+		<ItemRef ItemOID="biokemi_sthlm3_svar_s99" Mandatory="No" redcap:Variable="biokemi_sthlm3_svar_s99"/>
+		<ItemRef ItemOID="biokemi_sthlm3_svar_sx" Mandatory="No" redcap:Variable="biokemi_sthlm3_svar_sx"/>
+		<ItemRef ItemOID="biokemi_sthlm3_svar" Mandatory="Yes" redcap:Variable="biokemi_sthlm3_svar"/>
+		<ItemRef ItemOID="biokemi_sthml_svardato" Mandatory="Yes" redcap:Variable="biokemi_sthml_svardato"/>
+		<ItemRef ItemOID="biokemi_sthml3_svarurologi" Mandatory="Yes" redcap:Variable="biokemi_sthml3_svarurologi"/>
+		<ItemRef ItemOID="biokemi_sthlm3_vol_sthlm3" Mandatory="No" redcap:Variable="biokemi_sthlm3_vol_sthlm3"/>
+		<ItemRef ItemOID="biokemi_sthlm3_vol_score" Mandatory="No" redcap:Variable="biokemi_sthlm3_vol_score"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="biokemisk_svar_sthlm3.biokemisk_svar_sthlm3_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="biokemisk_svar_sthlm3_complete" Mandatory="No" redcap:Variable="biokemisk_svar_sthlm3_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="mri_scanning.mr_dato" Name="MRI scanning" Repeating="No">
+		<ItemRef ItemOID="mr_dato" Mandatory="Yes" redcap:Variable="mr_dato"/>
+		<ItemRef ItemOID="mr_blod" Mandatory="Yes" redcap:Variable="mr_blod"/>
+		<ItemRef ItemOID="mr_urin" Mandatory="Yes" redcap:Variable="mr_urin"/>
+		<ItemRef ItemOID="mr_samples_transferred" Mandatory="No" redcap:Variable="mr_samples_transferred"/>
+		<ItemRef ItemOID="mr_pakke" Mandatory="Yes" redcap:Variable="mr_pakke"/>
+		<ItemRef ItemOID="mr_prostata_fuldpakke_nej" Mandatory="No" redcap:Variable="mr_prostata_fuldpakke_nej"/>
+		<ItemRef ItemOID="mr_henvisende" Mandatory="No" redcap:Variable="mr_henvisende"/>
+		<ItemRef ItemOID="mr_henvisende_andet" Mandatory="No" redcap:Variable="mr_henvisende_andet"/>
+		<ItemRef ItemOID="mr_prostate_size_cc" Mandatory="Yes" redcap:Variable="mr_prostate_size_cc"/>
+		<ItemRef ItemOID="mr_prostate_size_ap" Mandatory="Yes" redcap:Variable="mr_prostate_size_ap"/>
+		<ItemRef ItemOID="mr_prostate_size_rl" Mandatory="Yes" redcap:Variable="mr_prostate_size_rl"/>
+		<ItemRef ItemOID="mr_prostata_volumen" Mandatory="No" redcap:Variable="mr_prostata_volumen"/>
+		<ItemRef ItemOID="mr_psa_volumen" Mandatory="No" redcap:Variable="mr_psa_volumen"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="mri_scanning.mri_scanning_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="mri_scanning_complete" Mandatory="No" redcap:Variable="mri_scanning_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="lsion.lesion_dato" Name="Læsion" Repeating="No">
+		<ItemRef ItemOID="lesion_dato" Mandatory="No" redcap:Variable="lesion_dato"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="lsion.lesion_t2_a" Name="Pakke A (ax T2 og DWI)" Repeating="No">
+		<ItemRef ItemOID="lesion_t2_a" Mandatory="No" redcap:Variable="lesion_t2_a"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="lsion.lesion_dwi_a" Name="Læsion" Repeating="No">
+		<ItemRef ItemOID="lesion_dwi_a" Mandatory="No" redcap:Variable="lesion_dwi_a"/>
+		<ItemRef ItemOID="lesion_extraprostatisk_a" Mandatory="No" redcap:Variable="lesion_extraprostatisk_a"/>
+		<ItemRef ItemOID="lesion_pirads_a" Mandatory="No" redcap:Variable="lesion_pirads_a"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="lsion.lesion_apex_l_a___1" Name="Læsion lokation (Pakke A)
+&lt;img src=&quot;https://i.imgur.com/4BFHYCp.png&quot; alt=&quot;Lession map&quot; style=&quot;width:750px;&quot;&gt;" Repeating="No">
+		<ItemRef ItemOID="lesion_apex_l_a___1" Mandatory="No" redcap:Variable="lesion_apex_l_a"/>
+		<ItemRef ItemOID="lesion_apex_l_a___2" Mandatory="No" redcap:Variable="lesion_apex_l_a"/>
+		<ItemRef ItemOID="lesion_apex_l_a___3" Mandatory="No" redcap:Variable="lesion_apex_l_a"/>
+		<ItemRef ItemOID="lesion_apex_l_a___4" Mandatory="No" redcap:Variable="lesion_apex_l_a"/>
+		<ItemRef ItemOID="lesion_apex_l_a___5" Mandatory="No" redcap:Variable="lesion_apex_l_a"/>
+		<ItemRef ItemOID="lesion_apex_l_a___6" Mandatory="No" redcap:Variable="lesion_apex_l_a"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="lsion.lesion_mid_l_a___1" Name="" Repeating="No">
+		<ItemRef ItemOID="lesion_mid_l_a___1" Mandatory="No" redcap:Variable="lesion_mid_l_a"/>
+		<ItemRef ItemOID="lesion_mid_l_a___2" Mandatory="No" redcap:Variable="lesion_mid_l_a"/>
+		<ItemRef ItemOID="lesion_mid_l_a___3" Mandatory="No" redcap:Variable="lesion_mid_l_a"/>
+		<ItemRef ItemOID="lesion_mid_l_a___4" Mandatory="No" redcap:Variable="lesion_mid_l_a"/>
+		<ItemRef ItemOID="lesion_mid_l_a___5" Mandatory="No" redcap:Variable="lesion_mid_l_a"/>
+		<ItemRef ItemOID="lesion_mid_l_a___6" Mandatory="No" redcap:Variable="lesion_mid_l_a"/>
+		<ItemRef ItemOID="lesion_base_l_a___1" Mandatory="No" redcap:Variable="lesion_base_l_a"/>
+		<ItemRef ItemOID="lesion_base_l_a___2" Mandatory="No" redcap:Variable="lesion_base_l_a"/>
+		<ItemRef ItemOID="lesion_base_l_a___3" Mandatory="No" redcap:Variable="lesion_base_l_a"/>
+		<ItemRef ItemOID="lesion_base_l_a___4" Mandatory="No" redcap:Variable="lesion_base_l_a"/>
+		<ItemRef ItemOID="lesion_base_l_a___5" Mandatory="No" redcap:Variable="lesion_base_l_a"/>
+		<ItemRef ItemOID="lesion_base_l_a___6" Mandatory="No" redcap:Variable="lesion_base_l_a"/>
+		<ItemRef ItemOID="lesion_apex_r_a___1" Mandatory="No" redcap:Variable="lesion_apex_r_a"/>
+		<ItemRef ItemOID="lesion_apex_r_a___2" Mandatory="No" redcap:Variable="lesion_apex_r_a"/>
+		<ItemRef ItemOID="lesion_apex_r_a___3" Mandatory="No" redcap:Variable="lesion_apex_r_a"/>
+		<ItemRef ItemOID="lesion_apex_r_a___4" Mandatory="No" redcap:Variable="lesion_apex_r_a"/>
+		<ItemRef ItemOID="lesion_apex_r_a___5" Mandatory="No" redcap:Variable="lesion_apex_r_a"/>
+		<ItemRef ItemOID="lesion_apex_r_a___6" Mandatory="No" redcap:Variable="lesion_apex_r_a"/>
+		<ItemRef ItemOID="lesion_mid_r_a___1" Mandatory="No" redcap:Variable="lesion_mid_r_a"/>
+		<ItemRef ItemOID="lesion_mid_r_a___2" Mandatory="No" redcap:Variable="lesion_mid_r_a"/>
+		<ItemRef ItemOID="lesion_mid_r_a___3" Mandatory="No" redcap:Variable="lesion_mid_r_a"/>
+		<ItemRef ItemOID="lesion_mid_r_a___4" Mandatory="No" redcap:Variable="lesion_mid_r_a"/>
+		<ItemRef ItemOID="lesion_mid_r_a___5" Mandatory="No" redcap:Variable="lesion_mid_r_a"/>
+		<ItemRef ItemOID="lesion_mid_r_a___6" Mandatory="No" redcap:Variable="lesion_mid_r_a"/>
+		<ItemRef ItemOID="lesion_base_r_a___1" Mandatory="No" redcap:Variable="lesion_base_r_a"/>
+		<ItemRef ItemOID="lesion_base_r_a___2" Mandatory="No" redcap:Variable="lesion_base_r_a"/>
+		<ItemRef ItemOID="lesion_base_r_a___3" Mandatory="No" redcap:Variable="lesion_base_r_a"/>
+		<ItemRef ItemOID="lesion_base_r_a___4" Mandatory="No" redcap:Variable="lesion_base_r_a"/>
+		<ItemRef ItemOID="lesion_base_r_a___5" Mandatory="No" redcap:Variable="lesion_base_r_a"/>
+		<ItemRef ItemOID="lesion_base_r_a___6" Mandatory="No" redcap:Variable="lesion_base_r_a"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="lsion.lesion_size_cc" Name="Læsion generelt" Repeating="No">
+		<ItemRef ItemOID="lesion_size_cc" Mandatory="Yes" redcap:Variable="lesion_size_cc"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="lsion.lesion_size_ap" Name="Læsion" Repeating="No">
+		<ItemRef ItemOID="lesion_size_ap" Mandatory="Yes" redcap:Variable="lesion_size_ap"/>
+		<ItemRef ItemOID="lesion_size_rl" Mandatory="Yes" redcap:Variable="lesion_size_rl"/>
+		<ItemRef ItemOID="lesion_volumen" Mandatory="No" redcap:Variable="lesion_volumen"/>
+		<ItemRef ItemOID="lesion_adc" Mandatory="Yes" redcap:Variable="lesion_adc"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="lsion.lesion_t2_b" Name="Pakke B (ax, cor og sag T2 + DWI)" Repeating="No">
+		<ItemRef ItemOID="lesion_t2_b" Mandatory="No" redcap:Variable="lesion_t2_b"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="lsion.lesion_dwi_b" Name="Læsion" Repeating="No">
+		<ItemRef ItemOID="lesion_dwi_b" Mandatory="No" redcap:Variable="lesion_dwi_b"/>
+		<ItemRef ItemOID="lesion_extraprostatisk_b" Mandatory="No" redcap:Variable="lesion_extraprostatisk_b"/>
+		<ItemRef ItemOID="lesion_pirads_b" Mandatory="No" redcap:Variable="lesion_pirads_b"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="lsion.lesion_apex_l_b___1" Name="Læsion lokation (Pakke B)
+&lt;img src=&quot;https://i.imgur.com/4BFHYCp.png&quot; alt=&quot;Lession map&quot; style=&quot;width:750px;&quot;&gt;" Repeating="No">
+		<ItemRef ItemOID="lesion_apex_l_b___1" Mandatory="No" redcap:Variable="lesion_apex_l_b"/>
+		<ItemRef ItemOID="lesion_apex_l_b___2" Mandatory="No" redcap:Variable="lesion_apex_l_b"/>
+		<ItemRef ItemOID="lesion_apex_l_b___3" Mandatory="No" redcap:Variable="lesion_apex_l_b"/>
+		<ItemRef ItemOID="lesion_apex_l_b___4" Mandatory="No" redcap:Variable="lesion_apex_l_b"/>
+		<ItemRef ItemOID="lesion_apex_l_b___5" Mandatory="No" redcap:Variable="lesion_apex_l_b"/>
+		<ItemRef ItemOID="lesion_apex_l_b___6" Mandatory="No" redcap:Variable="lesion_apex_l_b"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="lsion.lesion_mid_l_b___1" Name="" Repeating="No">
+		<ItemRef ItemOID="lesion_mid_l_b___1" Mandatory="No" redcap:Variable="lesion_mid_l_b"/>
+		<ItemRef ItemOID="lesion_mid_l_b___2" Mandatory="No" redcap:Variable="lesion_mid_l_b"/>
+		<ItemRef ItemOID="lesion_mid_l_b___3" Mandatory="No" redcap:Variable="lesion_mid_l_b"/>
+		<ItemRef ItemOID="lesion_mid_l_b___4" Mandatory="No" redcap:Variable="lesion_mid_l_b"/>
+		<ItemRef ItemOID="lesion_mid_l_b___5" Mandatory="No" redcap:Variable="lesion_mid_l_b"/>
+		<ItemRef ItemOID="lesion_mid_l_b___6" Mandatory="No" redcap:Variable="lesion_mid_l_b"/>
+		<ItemRef ItemOID="lesion_base_l_b___1" Mandatory="No" redcap:Variable="lesion_base_l_b"/>
+		<ItemRef ItemOID="lesion_base_l_b___2" Mandatory="No" redcap:Variable="lesion_base_l_b"/>
+		<ItemRef ItemOID="lesion_base_l_b___3" Mandatory="No" redcap:Variable="lesion_base_l_b"/>
+		<ItemRef ItemOID="lesion_base_l_b___4" Mandatory="No" redcap:Variable="lesion_base_l_b"/>
+		<ItemRef ItemOID="lesion_base_l_b___5" Mandatory="No" redcap:Variable="lesion_base_l_b"/>
+		<ItemRef ItemOID="lesion_base_l_b___6" Mandatory="No" redcap:Variable="lesion_base_l_b"/>
+		<ItemRef ItemOID="lesion_apex_r_b___1" Mandatory="No" redcap:Variable="lesion_apex_r_b"/>
+		<ItemRef ItemOID="lesion_apex_r_b___2" Mandatory="No" redcap:Variable="lesion_apex_r_b"/>
+		<ItemRef ItemOID="lesion_apex_r_b___3" Mandatory="No" redcap:Variable="lesion_apex_r_b"/>
+		<ItemRef ItemOID="lesion_apex_r_b___4" Mandatory="No" redcap:Variable="lesion_apex_r_b"/>
+		<ItemRef ItemOID="lesion_apex_r_b___5" Mandatory="No" redcap:Variable="lesion_apex_r_b"/>
+		<ItemRef ItemOID="lesion_apex_r_b___6" Mandatory="No" redcap:Variable="lesion_apex_r_b"/>
+		<ItemRef ItemOID="lesion_mid_r_b___1" Mandatory="No" redcap:Variable="lesion_mid_r_b"/>
+		<ItemRef ItemOID="lesion_mid_r_b___2" Mandatory="No" redcap:Variable="lesion_mid_r_b"/>
+		<ItemRef ItemOID="lesion_mid_r_b___3" Mandatory="No" redcap:Variable="lesion_mid_r_b"/>
+		<ItemRef ItemOID="lesion_mid_r_b___4" Mandatory="No" redcap:Variable="lesion_mid_r_b"/>
+		<ItemRef ItemOID="lesion_mid_r_b___5" Mandatory="No" redcap:Variable="lesion_mid_r_b"/>
+		<ItemRef ItemOID="lesion_mid_r_b___6" Mandatory="No" redcap:Variable="lesion_mid_r_b"/>
+		<ItemRef ItemOID="lesion_base_r_b___1" Mandatory="No" redcap:Variable="lesion_base_r_b"/>
+		<ItemRef ItemOID="lesion_base_r_b___2" Mandatory="No" redcap:Variable="lesion_base_r_b"/>
+		<ItemRef ItemOID="lesion_base_r_b___3" Mandatory="No" redcap:Variable="lesion_base_r_b"/>
+		<ItemRef ItemOID="lesion_base_r_b___4" Mandatory="No" redcap:Variable="lesion_base_r_b"/>
+		<ItemRef ItemOID="lesion_base_r_b___5" Mandatory="No" redcap:Variable="lesion_base_r_b"/>
+		<ItemRef ItemOID="lesion_base_r_b___6" Mandatory="No" redcap:Variable="lesion_base_r_b"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="lsion.lesion_t2_c" Name="Pakke C (ax, cor og sag T2 + DWI &amp; kontrastsekvens)" Repeating="No">
+		<ItemRef ItemOID="lesion_t2_c" Mandatory="Yes" redcap:Variable="lesion_t2_c"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="lsion.lesion_dwi_c" Name="Læsion" Repeating="No">
+		<ItemRef ItemOID="lesion_dwi_c" Mandatory="Yes" redcap:Variable="lesion_dwi_c"/>
+		<ItemRef ItemOID="lesion_dce_c" Mandatory="Yes" redcap:Variable="lesion_dce_c"/>
+		<ItemRef ItemOID="lesion_extraprostatisk_c" Mandatory="Yes" redcap:Variable="lesion_extraprostatisk_c"/>
+		<ItemRef ItemOID="lesion_pirads_c" Mandatory="Yes" redcap:Variable="lesion_pirads_c"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="lsion.lesion_apex_l_c___1" Name="Læsion lokation (Pakke C)
+&lt;img src=&quot;https://i.imgur.com/4BFHYCp.png&quot; alt=&quot;Lession map&quot; style=&quot;width:750px;&quot;&gt;" Repeating="No">
+		<ItemRef ItemOID="lesion_apex_l_c___1" Mandatory="No" redcap:Variable="lesion_apex_l_c"/>
+		<ItemRef ItemOID="lesion_apex_l_c___2" Mandatory="No" redcap:Variable="lesion_apex_l_c"/>
+		<ItemRef ItemOID="lesion_apex_l_c___3" Mandatory="No" redcap:Variable="lesion_apex_l_c"/>
+		<ItemRef ItemOID="lesion_apex_l_c___4" Mandatory="No" redcap:Variable="lesion_apex_l_c"/>
+		<ItemRef ItemOID="lesion_apex_l_c___5" Mandatory="No" redcap:Variable="lesion_apex_l_c"/>
+		<ItemRef ItemOID="lesion_apex_l_c___6" Mandatory="No" redcap:Variable="lesion_apex_l_c"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="lsion.lesion_mid_l_c___1" Name="" Repeating="No">
+		<ItemRef ItemOID="lesion_mid_l_c___1" Mandatory="No" redcap:Variable="lesion_mid_l_c"/>
+		<ItemRef ItemOID="lesion_mid_l_c___2" Mandatory="No" redcap:Variable="lesion_mid_l_c"/>
+		<ItemRef ItemOID="lesion_mid_l_c___3" Mandatory="No" redcap:Variable="lesion_mid_l_c"/>
+		<ItemRef ItemOID="lesion_mid_l_c___4" Mandatory="No" redcap:Variable="lesion_mid_l_c"/>
+		<ItemRef ItemOID="lesion_mid_l_c___5" Mandatory="No" redcap:Variable="lesion_mid_l_c"/>
+		<ItemRef ItemOID="lesion_mid_l_c___6" Mandatory="No" redcap:Variable="lesion_mid_l_c"/>
+		<ItemRef ItemOID="lesion_base_l_c___1" Mandatory="No" redcap:Variable="lesion_base_l_c"/>
+		<ItemRef ItemOID="lesion_base_l_c___2" Mandatory="No" redcap:Variable="lesion_base_l_c"/>
+		<ItemRef ItemOID="lesion_base_l_c___3" Mandatory="No" redcap:Variable="lesion_base_l_c"/>
+		<ItemRef ItemOID="lesion_base_l_c___4" Mandatory="No" redcap:Variable="lesion_base_l_c"/>
+		<ItemRef ItemOID="lesion_base_l_c___5" Mandatory="No" redcap:Variable="lesion_base_l_c"/>
+		<ItemRef ItemOID="lesion_base_l_c___6" Mandatory="No" redcap:Variable="lesion_base_l_c"/>
+		<ItemRef ItemOID="lesion_apex_r_c___1" Mandatory="No" redcap:Variable="lesion_apex_r_c"/>
+		<ItemRef ItemOID="lesion_apex_r_c___2" Mandatory="No" redcap:Variable="lesion_apex_r_c"/>
+		<ItemRef ItemOID="lesion_apex_r_c___3" Mandatory="No" redcap:Variable="lesion_apex_r_c"/>
+		<ItemRef ItemOID="lesion_apex_r_c___4" Mandatory="No" redcap:Variable="lesion_apex_r_c"/>
+		<ItemRef ItemOID="lesion_apex_r_c___5" Mandatory="No" redcap:Variable="lesion_apex_r_c"/>
+		<ItemRef ItemOID="lesion_apex_r_c___6" Mandatory="No" redcap:Variable="lesion_apex_r_c"/>
+		<ItemRef ItemOID="lesion_mid_r_c___1" Mandatory="No" redcap:Variable="lesion_mid_r_c"/>
+		<ItemRef ItemOID="lesion_mid_r_c___2" Mandatory="No" redcap:Variable="lesion_mid_r_c"/>
+		<ItemRef ItemOID="lesion_mid_r_c___3" Mandatory="No" redcap:Variable="lesion_mid_r_c"/>
+		<ItemRef ItemOID="lesion_mid_r_c___4" Mandatory="No" redcap:Variable="lesion_mid_r_c"/>
+		<ItemRef ItemOID="lesion_mid_r_c___5" Mandatory="No" redcap:Variable="lesion_mid_r_c"/>
+		<ItemRef ItemOID="lesion_mid_r_c___6" Mandatory="No" redcap:Variable="lesion_mid_r_c"/>
+		<ItemRef ItemOID="lesion_base_r_c___1" Mandatory="No" redcap:Variable="lesion_base_r_c"/>
+		<ItemRef ItemOID="lesion_base_r_c___2" Mandatory="No" redcap:Variable="lesion_base_r_c"/>
+		<ItemRef ItemOID="lesion_base_r_c___3" Mandatory="No" redcap:Variable="lesion_base_r_c"/>
+		<ItemRef ItemOID="lesion_base_r_c___4" Mandatory="No" redcap:Variable="lesion_base_r_c"/>
+		<ItemRef ItemOID="lesion_base_r_c___5" Mandatory="No" redcap:Variable="lesion_base_r_c"/>
+		<ItemRef ItemOID="lesion_base_r_c___6" Mandatory="No" redcap:Variable="lesion_base_r_c"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="lsion.mrgb_dato" Name="MRBG" Repeating="No">
+		<ItemRef ItemOID="mrgb_dato" Mandatory="No" redcap:Variable="mrgb_dato"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="lsion.mrgb_antal" Name="Læsion" Repeating="No">
+		<ItemRef ItemOID="mrgb_antal" Mandatory="No" redcap:Variable="mrgb_antal"/>
+		<ItemRef ItemOID="mrgb_totallength_1" Mandatory="No" redcap:Variable="mrgb_totallength_1"/>
+		<ItemRef ItemOID="mrgb_carsinomlength_1" Mandatory="No" redcap:Variable="mrgb_carsinomlength_1"/>
+		<ItemRef ItemOID="mrgb_carsinomprocent_1" Mandatory="No" redcap:Variable="mrgb_carsinomprocent_1"/>
+		<ItemRef ItemOID="mrgb_carsinompatologi_1" Mandatory="No" redcap:Variable="mrgb_carsinompatologi_1"/>
+		<ItemRef ItemOID="mrgb_gleason1_1" Mandatory="No" redcap:Variable="mrgb_gleason1_1"/>
+		<ItemRef ItemOID="mrgb_gleason2_1" Mandatory="No" redcap:Variable="mrgb_gleason2_1"/>
+		<ItemRef ItemOID="mrgb_gleason_sum_1" Mandatory="No" redcap:Variable="mrgb_gleason_sum_1"/>
+		<ItemRef ItemOID="mrgb_totallength_2" Mandatory="No" redcap:Variable="mrgb_totallength_2"/>
+		<ItemRef ItemOID="mrgb_carsinomlength_2" Mandatory="No" redcap:Variable="mrgb_carsinomlength_2"/>
+		<ItemRef ItemOID="mrgb_carsinomprocent_2" Mandatory="No" redcap:Variable="mrgb_carsinomprocent_2"/>
+		<ItemRef ItemOID="mrgb_carsinompatologi_2" Mandatory="No" redcap:Variable="mrgb_carsinompatologi_2"/>
+		<ItemRef ItemOID="mrgb_gleason1_2" Mandatory="No" redcap:Variable="mrgb_gleason1_2"/>
+		<ItemRef ItemOID="mrgb_gleason2_2" Mandatory="No" redcap:Variable="mrgb_gleason2_2"/>
+		<ItemRef ItemOID="mrgb_gleason_sum_2" Mandatory="No" redcap:Variable="mrgb_gleason_sum_2"/>
+		<ItemRef ItemOID="mrgb_totallength_3" Mandatory="No" redcap:Variable="mrgb_totallength_3"/>
+		<ItemRef ItemOID="mrgb_carsinomlength_3" Mandatory="No" redcap:Variable="mrgb_carsinomlength_3"/>
+		<ItemRef ItemOID="mrgb_carsinomprocent_3" Mandatory="No" redcap:Variable="mrgb_carsinomprocent_3"/>
+		<ItemRef ItemOID="mrgb_carsinompatologi_3" Mandatory="No" redcap:Variable="mrgb_carsinompatologi_3"/>
+		<ItemRef ItemOID="mrgb_gleason1_3" Mandatory="No" redcap:Variable="mrgb_gleason1_3"/>
+		<ItemRef ItemOID="mrgb_gleason2_3" Mandatory="No" redcap:Variable="mrgb_gleason2_3"/>
+		<ItemRef ItemOID="mrgb_gleason_sum_3" Mandatory="No" redcap:Variable="mrgb_gleason_sum_3"/>
+		<ItemRef ItemOID="mrgb_totallength_4" Mandatory="No" redcap:Variable="mrgb_totallength_4"/>
+		<ItemRef ItemOID="mrgb_carsinomlength_4" Mandatory="No" redcap:Variable="mrgb_carsinomlength_4"/>
+		<ItemRef ItemOID="mrgb_carsinomprocent_4" Mandatory="No" redcap:Variable="mrgb_carsinomprocent_4"/>
+		<ItemRef ItemOID="mrgb_carsinompatologi_4" Mandatory="No" redcap:Variable="mrgb_carsinompatologi_4"/>
+		<ItemRef ItemOID="mrgb_gleason1_4" Mandatory="No" redcap:Variable="mrgb_gleason1_4"/>
+		<ItemRef ItemOID="mrgb_gleason2_4" Mandatory="No" redcap:Variable="mrgb_gleason2_4"/>
+		<ItemRef ItemOID="mrgb_gleason_sum_4" Mandatory="No" redcap:Variable="mrgb_gleason_sum_4"/>
+		<ItemRef ItemOID="mrgb_totallength_5" Mandatory="No" redcap:Variable="mrgb_totallength_5"/>
+		<ItemRef ItemOID="mrgb_carsinomlength_5" Mandatory="No" redcap:Variable="mrgb_carsinomlength_5"/>
+		<ItemRef ItemOID="mrgb_carsinomprocent_5" Mandatory="No" redcap:Variable="mrgb_carsinomprocent_5"/>
+		<ItemRef ItemOID="mrgb_carsinompatologi_5" Mandatory="No" redcap:Variable="mrgb_carsinompatologi_5"/>
+		<ItemRef ItemOID="mrgb_gleason1_5" Mandatory="No" redcap:Variable="mrgb_gleason1_5"/>
+		<ItemRef ItemOID="mrgb_gleason2_5" Mandatory="No" redcap:Variable="mrgb_gleason2_5"/>
+		<ItemRef ItemOID="mrgb_gleason_sum_5" Mandatory="No" redcap:Variable="mrgb_gleason_sum_5"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="lsion.lsion_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="lsion_complete" Mandatory="No" redcap:Variable="lsion_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="noter.note_dato" Name="Noter" Repeating="No">
+		<ItemRef ItemOID="note_dato" Mandatory="No" redcap:Variable="note_dato"/>
+		<ItemRef ItemOID="note_note" Mandatory="No" redcap:Variable="note_note"/>
+		<ItemRef ItemOID="note_hvem" Mandatory="No" redcap:Variable="note_hvem"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="noter.noter_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="noter_complete" Mandatory="No" redcap:Variable="noter_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="flag.flag_dato" Name="Flag" Repeating="No">
+		<ItemRef ItemOID="flag_dato" Mandatory="No" redcap:Variable="flag_dato"/>
+		<ItemRef ItemOID="flag_problem" Mandatory="No" redcap:Variable="flag_problem"/>
+		<ItemRef ItemOID="flag_hvem" Mandatory="No" redcap:Variable="flag_hvem"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="flag.flag_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="flag_complete" Mandatory="No" redcap:Variable="flag_complete"/>
+	</ItemGroupDef>
+	<ItemDef OID="record_id" Name="record_id" DataType="text" Length="999" redcap:Variable="record_id" redcap:FieldType="text">
+		<Question><TranslatedText>PRIMA ID</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="patient_fnavn" Name="patient_fnavn" DataType="text" Length="999" redcap:Variable="patient_fnavn" redcap:FieldType="text" redcap:RequiredField="y">
+		<Question><TranslatedText>Fornavn(e)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="patient_enavn" Name="patient_enavn" DataType="text" Length="999" redcap:Variable="patient_enavn" redcap:FieldType="text" redcap:RequiredField="y">
+		<Question><TranslatedText>Efternavn</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="patient_cpr" Name="patient_cpr" DataType="text" Length="999" redcap:Variable="patient_cpr" redcap:FieldType="text" redcap:TextValidationType="dk_cpr" redcap:FieldNote="DDMMÅÅSSSS" redcap:Identifier="y" redcap:RequiredField="y">
+		<Question><TranslatedText>CPR-nummer</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="patient_samtykke_dato" Name="patient_samtykke_dato" DataType="date" Length="999" redcap:Variable="patient_samtykke_dato" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:RequiredField="y">
+		<Question><TranslatedText>Inklusionsdato (dato for samtykke)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="patient_samtykke" Name="patient_samtykke" DataType="text" Length="1" redcap:Variable="patient_samtykke" redcap:FieldType="select" redcap:RequiredField="y" redcap:FieldAnnotation="@DEFAULT=&#039;1&#039;">
+		<Question><TranslatedText>Samtykke</TranslatedText></Question>
+		<CodeListRef CodeListOID="patient_samtykke.choices"/>
+	</ItemDef>
+	<ItemDef OID="patient_samtykke_scan" Name="patient_samtykke_scan" DataType="text" Length="999" redcap:Variable="patient_samtykke_scan" redcap:FieldType="file" redcap:BranchingLogic="[patient_samtykke] = &#039;1&#039;">
+		<Question><TranslatedText>Scanning af samtykke</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="patient_samtykke_inform" Name="patient_samtykke_inform" DataType="boolean" Length="1" redcap:Variable="patient_samtykke_inform" redcap:FieldType="yesno" redcap:FieldNote="Hvis der ikke er angivet noget, så vælg da &#039;nej&#039;." redcap:RequiredField="y" redcap:BranchingLogic="[patient_samtykke_scan] &lt;&gt; &quot;&quot;">
+		<Question><TranslatedText>Patienten ønsker at blive informeret om forskningsprojektets resultater samt eventuelle konsekvenser.</TranslatedText></Question>
+		<CodeListRef CodeListOID="patient_samtykke_inform.choices"/>
+	</ItemDef>
+	<ItemDef OID="patient_information_complete" Name="patient_information_complete" DataType="text" Length="1" redcap:Variable="patient_information_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="patient_information_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="ap_samples_transferred" Name="ap_samples_transferred" DataType="boolean" Length="1" redcap:Variable="ap_samples_transferred" redcap:FieldType="yesno" redcap:SectionHeader="Prøve informationer" redcap:FieldAnnotation="@HIDDEN @DEFAULT=&#039;0&#039;">
+		<Question><TranslatedText>Samples transferred to CMCC</TranslatedText></Question>
+		<CodeListRef CodeListOID="ap_samples_transferred.choices"/>
+	</ItemDef>
+	<ItemDef OID="ap_tagningsdato" Name="ap_tagningsdato" DataType="date" Length="999" redcap:Variable="ap_tagningsdato" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:RequiredField="y">
+		<Question><TranslatedText>Prøvetagningsdato</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="ap_modtaget_dato" Name="ap_modtaget_dato" DataType="date" Length="999" redcap:Variable="ap_modtaget_dato" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:RequiredField="y">
+		<Question><TranslatedText>Modtagelsdato</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="ap_ydernummer" Name="ap_ydernummer" DataType="text" Length="999" redcap:Variable="ap_ydernummer" redcap:FieldType="text" redcap:RequiredField="y">
+		<Question><TranslatedText>Nummer på rekvirent (praksis ID)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="ap_praksis" Name="ap_praksis" DataType="text" Length="999" redcap:Variable="ap_praksis" redcap:FieldType="textarea" redcap:FieldNote="Feltet udfyldes automatisk efter der bliver trykket på gem" redcap:FieldAnnotation="@READONLY">
+		<Question><TranslatedText>Navn på praksis</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="sthlm3_pcfamilie" Name="sthlm3_pcfamilie" DataType="text" Length="1" redcap:Variable="sthlm3_pcfamilie" redcap:FieldType="select" redcap:SectionHeader="STHLM3 oplysninger" redcap:RequiredField="y">
+		<Question><TranslatedText>Prostata cancer familie historie</TranslatedText></Question>
+		<CodeListRef CodeListOID="sthlm3_pcfamilie.choices"/>
+	</ItemDef>
+	<ItemDef OID="sthml3_5alfa" Name="sthml3_5alfa" DataType="text" Length="1" redcap:Variable="sthml3_5alfa" redcap:FieldType="select" redcap:RequiredField="y" redcap:FieldAnnotation="@DEFAULT=&#039;0&#039;">
+		<Question><TranslatedText>Har taget 5-alfa-reduktasehæmmere inden for 3 måneder</TranslatedText></Question>
+		<CodeListRef CodeListOID="sthml3_5alfa.choices"/>
+	</ItemDef>
+	<ItemDef OID="almen_praksis_prver_complete" Name="almen_praksis_prver_complete" DataType="text" Length="1" redcap:Variable="almen_praksis_prver_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="almen_praksis_prver_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="biokemi_psa_psa" Name="biokemi_psa_psa" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="biokemi_psa_psa" redcap:FieldType="text" redcap:TextValidationType="float" redcap:FieldNote="Hvis PSA målingen ikke kunne udføres, skriv da 9999&lt;br&gt;Amerikansk komma (.)" redcap:RequiredField="y">
+		<Question><TranslatedText>PSA målt på KBA (µg/l)</TranslatedText></Question>
+		<RangeCheck Comparator="GE" SoftHard="Soft">
+			<CheckValue>0</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (0 - no limit). This value is admissible, but you may wish to verify.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+	</ItemDef>
+	<ItemDef OID="biokemi_psa_psa_korrigeret" Name="biokemi_psa_psa_korrigeret" DataType="text" Length="999" redcap:Variable="biokemi_psa_psa_korrigeret" redcap:FieldType="text" redcap:FieldAnnotation="@READONLY">
+		<Question><TranslatedText>Korrigeret PSA</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="biokemi_psa_svarkode" Name="biokemi_psa_svarkode" DataType="text" Length="999" redcap:Variable="biokemi_psa_svarkode" redcap:FieldType="text" redcap:BranchingLogic="[biokemi_psa_psa] != &quot;&quot; AND [biokemi_psa_psa]  &gt;= 0" redcap:FieldAnnotation="@READONLY @HIDDEN">
+		<Question><TranslatedText>Svarkode til LABKA</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="biokemi_psa_svarkodep0" Name="biokemi_psa_svarkodep0" DataType="text" Length="999" redcap:Variable="biokemi_psa_svarkodep0" redcap:FieldType="descriptive" redcap:BranchingLogic="[biokemi_psa_psa] != &quot;&quot; AND [biokemi_psa_psa] &lt;1">
+		<Question><TranslatedText>LABKA svarkode: &#039;PRI0 - PSA er under 1. Der foretages ikke yderligere iht. gældende guidelines på området. Der foretages ikke en STHLM3-test.</TranslatedText><redcap:FormattedTranslatedText>LABKA svarkode: &lt;u&gt;&#039;PRI0&lt;/u&gt; - PSA er under 1. Der foretages ikke yderligere iht. gældende guidelines på området. Der foretages ikke en STHLM3-test.</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="biokemi_psa_svarkodep1" Name="biokemi_psa_svarkodep1" DataType="text" Length="999" redcap:Variable="biokemi_psa_svarkodep1" redcap:FieldType="descriptive" redcap:BranchingLogic="[biokemi_psa_psa] != &quot;&quot; AND [biokemi_psa_psa] &gt;= 1 AND [biokemi_psa_psa] &lt;   3">
+		<Question><TranslatedText>LABKA svarkode: &#039;PRI1 - PSA er mellem 1 og 2,9.  Der foretages en STHLM3-test med svar indenfor 8 uger for det videre forløb. </TranslatedText><redcap:FormattedTranslatedText>LABKA svarkode: &lt;u&gt;&#039;PRI1&lt;/u&gt; - PSA er mellem 1 og 2,9.  Der foretages en STHLM3-test med svar indenfor 8 uger for det videre forløb. </redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="biokemi_psa_svarkodep3" Name="biokemi_psa_svarkodep3" DataType="text" Length="999" redcap:Variable="biokemi_psa_svarkodep3" redcap:FieldType="descriptive" redcap:BranchingLogic="[biokemi_psa_psa] != &quot;&quot; AND [biokemi_psa_psa] &gt;= 3 AND [biokemi_psa_psa] &lt;= 10">
+		<Question><TranslatedText>LABKA svarkode: &#039;PRI3 - PSA er mellem 3 og 10. Patienten henvises til urologi med henblik på MR-skanning af prostata. I henvisningen skrives &quot;PRIMA projekt&quot; i overskriften. PSA resultatet noteres i henvisningen suppleret med indikationen - patienten bedes henvist til MR-prostata som led i projekt PRIMA. Der foretages en STHLM3-test med svar indenfor 8 uger.</TranslatedText><redcap:FormattedTranslatedText>LABKA svarkode: &lt;u&gt;&#039;PRI3&lt;/u&gt; - PSA er mellem 3 og 10. Patienten henvises til urologi med henblik på MR-skanning af prostata. I henvisningen skrives &quot;PRIMA projekt&quot; i overskriften. PSA resultatet noteres i henvisningen suppleret med indikationen - patienten bedes henvist til MR-prostata som led i projekt PRIMA. Der foretages en STHLM3-test med svar indenfor 8 uger.</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="biokemi_psa_svarkodep10" Name="biokemi_psa_svarkodep10" DataType="text" Length="999" redcap:Variable="biokemi_psa_svarkodep10" redcap:FieldType="descriptive" redcap:BranchingLogic="[biokemi_psa_psa] != &quot;&quot; AND [biokemi_psa_psa] &gt; 10 AND [biokemi_psa_psa] != 9999">
+		<Question><TranslatedText>LABKA svarkode: &#039;PRI10 - PSA er over 10. Patienten henvises til urologisk udredning iht. gældende guidelines på området. Der foretages ikke en STHLM3-test.</TranslatedText><redcap:FormattedTranslatedText>LABKA svarkode: &lt;u&gt;&#039;PRI10&lt;/u&gt; - PSA er over 10. Patienten henvises til urologisk udredning iht. gældende guidelines på området. Der foretages ikke en STHLM3-test.</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="labka_psa_svarkode_px" Name="labka_psa_svarkode_px" DataType="text" Length="999" redcap:Variable="labka_psa_svarkode_px" redcap:FieldType="descriptive" redcap:BranchingLogic="[biokemi_psa_psa] != &quot;&quot; AND [biokemi_psa_psa] = 9999">
+		<Question><TranslatedText>LABKA svarkode: &#039;PX - PSA måling kunne ikke udføres.</TranslatedText><redcap:FormattedTranslatedText>LABKA svarkode: &lt;u&gt;&#039;PX&lt;/u&gt; - PSA måling kunne ikke udføres.</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="biokemi_psa_svar" Name="biokemi_psa_svar" DataType="boolean" Length="1" redcap:Variable="biokemi_psa_svar" redcap:FieldType="yesno" redcap:RequiredField="y">
+		<Question><TranslatedText>Svar afgivet til PL i LABKA?</TranslatedText></Question>
+		<CodeListRef CodeListOID="biokemi_psa_svar.choices"/>
+	</ItemDef>
+	<ItemDef OID="biokemi_psa_svardato" Name="biokemi_psa_svardato" DataType="date" Length="999" redcap:Variable="biokemi_psa_svardato" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:BranchingLogic="[biokemi_psa_svar] = &#039;1&#039;">
+		<Question><TranslatedText>Svardato</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="biokemisk_svar_psa_complete" Name="biokemisk_svar_psa_complete" DataType="text" Length="1" redcap:Variable="biokemisk_svar_psa_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="biokemisk_svar_psa_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="biokemi_sthlm3_sthlm3" Name="biokemi_sthlm3_sthlm3" DataType="text" Length="4" redcap:Variable="biokemi_sthlm3_sthlm3" redcap:FieldType="select" redcap:RequiredField="y">
+		<Question><TranslatedText>Svar fra STHLM3</TranslatedText></Question>
+		<CodeListRef CodeListOID="biokemi_sthlm3_sthlm3.choices"/>
+	</ItemDef>
+	<ItemDef OID="biokemi_sthlm3_score" Name="biokemi_sthlm3_score" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="biokemi_sthlm3_score" redcap:FieldType="text" redcap:TextValidationType="float" redcap:RequiredField="y" redcap:BranchingLogic="[biokemi_sthlm3_sthlm3] = &#039;0&#039; or [biokemi_sthlm3_sthlm3] = &#039;1&#039;">
+		<Question><TranslatedText>STHLM3 score (%)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="biokemi_sthml3_psa" Name="biokemi_sthml3_psa" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="biokemi_sthml3_psa" redcap:FieldType="text" redcap:TextValidationType="float" redcap:FieldNote="Amerikansk komma (.)" redcap:RequiredField="y" redcap:BranchingLogic="[biokemi_sthlm3_sthlm3] = &#039;0&#039; or [biokemi_sthlm3_sthlm3] = &#039;1&#039;">
+		<Question><TranslatedText>P-PSA målt i STHML</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="biokemi_sthml3_svarkode" Name="biokemi_sthml3_svarkode" DataType="text" Length="999" redcap:Variable="biokemi_sthml3_svarkode" redcap:FieldType="text" redcap:FieldAnnotation="@READONLY @HIDDEN">
+		<Question><TranslatedText>Svarkode til LABKA</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="biokemi_sthlm3_svar_snp1" Name="biokemi_sthlm3_svar_snp1" DataType="text" Length="999" redcap:Variable="biokemi_sthlm3_svar_snp1" redcap:FieldType="descriptive" redcap:BranchingLogic="[biokemi_sthlm3_sthlm3] != &#039;&#039; and [biokemi_sthlm3_sthlm3] = &#039;0&#039; and [biokemi_psa_psa] &lt;  3 and [biokemi_psa_psa] &gt;= 1">
+		<Question><TranslatedText>LABKA svarkode: &#039;SNP1 - STHLM3-testen viser normal risiko for prostatakræft og PSA er normal. Der foretages ikke yderligere iht. gældende guidelines på området.</TranslatedText><redcap:FormattedTranslatedText>LABKA svarkode: &lt;u&gt;&#039;SNP1&lt;/u&gt; - STHLM3-testen viser normal risiko for prostatakræft og PSA er normal. Der foretages ikke yderligere iht. gældende guidelines på området.</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="biokemi_sthlm3_svar_snp3" Name="biokemi_sthlm3_svar_snp3" DataType="text" Length="999" redcap:Variable="biokemi_sthlm3_svar_snp3" redcap:FieldType="descriptive" redcap:BranchingLogic="[biokemi_sthlm3_sthlm3] != &#039;&#039; and [biokemi_sthlm3_sthlm3] = 0 and [biokemi_psa_psa] &gt;= 3 and [biokemi_psa_psa] &lt;= 10">
+		<Question><TranslatedText>LABKA svarkode: &#039;SNP3 - STHLM3-testen viser normal risiko for prostatakræft. Patienten er allerede henvist til urologi med henblik på MR-skanning af prostata på baggrund af forhøjet PSA. Der foretages ikke yderligere.</TranslatedText><redcap:FormattedTranslatedText>LABKA svarkode: &lt;u&gt;&#039;SNP3&lt;/u&gt; - STHLM3-testen viser normal risiko for prostatakræft. Patienten er allerede henvist til urologi med henblik på MR-skanning af prostata på baggrund af forhøjet PSA. Der foretages ikke yderligere.</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="biokemi_sthlm3_svar_spp1" Name="biokemi_sthlm3_svar_spp1" DataType="text" Length="999" redcap:Variable="biokemi_sthlm3_svar_spp1" redcap:FieldType="descriptive" redcap:BranchingLogic="[biokemi_sthlm3_sthlm3] != &#039;&#039; and [biokemi_sthlm3_sthlm3] = 1 and [biokemi_psa_psa] &gt;= 1 and [biokemi_psa_psa] &lt;  3">
+		<Question><TranslatedText>LABKA svarkode: &#039;SPP1 - STHLM3-testen viser forhøjet risiko for prostatakræft. Patienten henvises til urologi med henblik på MR-skanning af prostata. I henvisningen skrives &quot;PRIMA projekt&quot; i overskriften. PSA resultatet noteres i henvisningen suppleret med indikationen - patienten bedes henvist til MR-prostata som led i projekt PRIMA.</TranslatedText><redcap:FormattedTranslatedText>LABKA svarkode: &lt;u&gt;&#039;SPP1&lt;/u&gt; - STHLM3-testen viser forhøjet risiko for prostatakræft. Patienten henvises til urologi med henblik på MR-skanning af prostata. I henvisningen skrives &quot;PRIMA projekt&quot; i overskriften. PSA resultatet noteres i henvisningen suppleret med indikationen - patienten bedes henvist til MR-prostata som led i projekt PRIMA.</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="biokemi_sthlm3_svar_spp3" Name="biokemi_sthlm3_svar_spp3" DataType="text" Length="999" redcap:Variable="biokemi_sthlm3_svar_spp3" redcap:FieldType="descriptive" redcap:BranchingLogic="[biokemi_sthlm3_sthlm3] != &#039;&#039; and [biokemi_sthlm3_sthlm3] = 1 and [biokemi_psa_psa] &gt;= 3 and [biokemi_psa_psa] &lt;= 10">
+		<Question><TranslatedText>LABKA svarkode: &#039;SPP3 - STHLM3-testen viser forhøjet risiko for prostatakræft. Patienten er allerede henvist til urologi med henblik på MR-skanning af prostata på baggrund af forhøjet PSA. Der foretages ikke yderligere.</TranslatedText><redcap:FormattedTranslatedText>LABKA svarkode: &lt;u&gt;&#039;SPP3&lt;/u&gt; - STHLM3-testen viser forhøjet risiko for prostatakræft. Patienten er allerede henvist til urologi med henblik på MR-skanning af prostata på baggrund af forhøjet PSA. Der foretages ikke yderligere.</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="biokemi_sthlm3_svar_s99" Name="biokemi_sthlm3_svar_s99" DataType="text" Length="999" redcap:Variable="biokemi_sthlm3_svar_s99" redcap:FieldType="descriptive" redcap:BranchingLogic="(([biokemi_psa_psa] != &#039;&#039; and ([biokemi_psa_psa] &lt;  1 or [biokemi_psa_psa] &gt; 10)) or [biokemi_sthlm3_sthlm3] = 99) and [biokemi_sthlm3_sthlm3] != 9999">
+		<Question><TranslatedText>LABKA svarkode: &#039;S99 - STHLM3-testen ikke udført</TranslatedText><redcap:FormattedTranslatedText>LABKA svarkode: &lt;u&gt;&#039;S99&lt;/u&gt; - STHLM3-testen ikke udført</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="biokemi_sthlm3_svar_sx" Name="biokemi_sthlm3_svar_sx" DataType="text" Length="999" redcap:Variable="biokemi_sthlm3_svar_sx" redcap:FieldType="descriptive" redcap:BranchingLogic="[biokemi_sthlm3_sthlm3] = &#039;9999&#039;">
+		<Question><TranslatedText>LABKA svarkode: &#039;SX - STHLM3 testen kunne ikke udføres.</TranslatedText><redcap:FormattedTranslatedText>LABKA svarkode: &lt;u&gt;&#039;SX&lt;/u&gt; - STHLM3 testen kunne ikke udføres.</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="biokemi_sthlm3_svar" Name="biokemi_sthlm3_svar" DataType="boolean" Length="1" redcap:Variable="biokemi_sthlm3_svar" redcap:FieldType="yesno" redcap:RequiredField="y" redcap:BranchingLogic="[biokemi_sthlm3_sthlm3]  != &quot;&quot;">
+		<Question><TranslatedText>Svar afgivet til PL i LABKA?</TranslatedText></Question>
+		<CodeListRef CodeListOID="biokemi_sthlm3_svar.choices"/>
+	</ItemDef>
+	<ItemDef OID="biokemi_sthml_svardato" Name="biokemi_sthml_svardato" DataType="date" Length="999" redcap:Variable="biokemi_sthml_svardato" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:RequiredField="y" redcap:BranchingLogic="[biokemi_sthlm3_svar] = &#039;1&#039;">
+		<Question><TranslatedText>Svardato</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="biokemi_sthml3_svarurologi" Name="biokemi_sthml3_svarurologi" DataType="boolean" Length="1" redcap:Variable="biokemi_sthml3_svarurologi" redcap:FieldType="yesno" redcap:RequiredField="y" redcap:BranchingLogic="(([biokemi_sthlm3_sthlm3] = &#039;0&#039;) AND ([biokemi_psa_psa] != &quot;&quot; AND [biokemi_psa_psa] &gt;= 3 AND [biokemi_psa_psa] &lt;= 10)) OR [biokemi_sthlm3_sthlm3] = &#039;1&#039;">
+		<Question><TranslatedText>Svarbrev sendt til urologisk afdeling ([mri_arm_1][mr_henvisende])?</TranslatedText></Question>
+		<CodeListRef CodeListOID="biokemi_sthml3_svarurologi.choices"/>
+	</ItemDef>
+	<ItemDef OID="biokemi_sthlm3_vol_sthlm3" Name="biokemi_sthlm3_vol_sthlm3" DataType="text" Length="4" redcap:Variable="biokemi_sthlm3_vol_sthlm3" redcap:FieldType="select" redcap:BranchingLogic="[mr_prostata_volumen] != &#039;&#039;">
+		<Question><TranslatedText>Prostata volumen justeret svar fra STHLM3</TranslatedText></Question>
+		<CodeListRef CodeListOID="biokemi_sthlm3_vol_sthlm3.choices"/>
+	</ItemDef>
+	<ItemDef OID="biokemi_sthlm3_vol_score" Name="biokemi_sthlm3_vol_score" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="biokemi_sthlm3_vol_score" redcap:FieldType="text" redcap:TextValidationType="float" redcap:BranchingLogic="[mr_prostata_volumen] != &#039;&#039;">
+		<Question><TranslatedText>Prostata volumen justeret STHML3 score (%)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="biokemisk_svar_sthlm3_complete" Name="biokemisk_svar_sthlm3_complete" DataType="text" Length="1" redcap:Variable="biokemisk_svar_sthlm3_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="biokemisk_svar_sthlm3_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="mr_dato" Name="mr_dato" DataType="date" Length="999" redcap:Variable="mr_dato" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:RequiredField="y">
+		<Question><TranslatedText>Scanningsdato</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mr_blod" Name="mr_blod" DataType="boolean" Length="1" redcap:Variable="mr_blod" redcap:FieldType="yesno" redcap:RequiredField="y" redcap:FieldAnnotation="@DEFAULT=&#039;1&#039;">
+		<Question><TranslatedText>Blodprøver taget</TranslatedText></Question>
+		<CodeListRef CodeListOID="mr_blod.choices"/>
+	</ItemDef>
+	<ItemDef OID="mr_urin" Name="mr_urin" DataType="boolean" Length="1" redcap:Variable="mr_urin" redcap:FieldType="yesno" redcap:RequiredField="y" redcap:FieldAnnotation="@DEFAULT=&#039;1&#039;">
+		<Question><TranslatedText>Urinprøve taget</TranslatedText></Question>
+		<CodeListRef CodeListOID="mr_urin.choices"/>
+	</ItemDef>
+	<ItemDef OID="mr_samples_transferred" Name="mr_samples_transferred" DataType="boolean" Length="1" redcap:Variable="mr_samples_transferred" redcap:FieldType="yesno" redcap:FieldAnnotation="@HIDDEN @DEFAULT=&#039;0&#039;">
+		<Question><TranslatedText>Samples transferred to CMCC</TranslatedText></Question>
+		<CodeListRef CodeListOID="mr_samples_transferred.choices"/>
+	</ItemDef>
+	<ItemDef OID="mr_pakke" Name="mr_pakke" DataType="boolean" Length="1" redcap:Variable="mr_pakke" redcap:FieldType="yesno" redcap:RequiredField="y" redcap:FieldAnnotation="@DEFAULT=&#039;1&#039;">
+		<Question><TranslatedText>Fuld scanningspakke</TranslatedText></Question>
+		<CodeListRef CodeListOID="mr_pakke.choices"/>
+	</ItemDef>
+	<ItemDef OID="mr_prostata_fuldpakke_nej" Name="mr_prostata_fuldpakke_nej" DataType="text" Length="999" redcap:Variable="mr_prostata_fuldpakke_nej" redcap:FieldType="textarea" redcap:BranchingLogic="[mr_pakke] = &#039;0&#039;">
+		<Question><TranslatedText>Årsag til manglende fuld pakke</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mr_henvisende" Name="mr_henvisende" DataType="text" Length="1" redcap:Variable="mr_henvisende" redcap:FieldType="select">
+		<Question><TranslatedText>Patient henvist fra hvilket hospital</TranslatedText></Question>
+		<CodeListRef CodeListOID="mr_henvisende.choices"/>
+	</ItemDef>
+	<ItemDef OID="mr_henvisende_andet" Name="mr_henvisende_andet" DataType="text" Length="999" redcap:Variable="mr_henvisende_andet" redcap:FieldType="text" redcap:BranchingLogic="[mr_henvisende] = &#039;9&#039;">
+		<Question><TranslatedText>Hospital andet</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mr_prostate_size_cc" Name="mr_prostate_size_cc" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="mr_prostate_size_cc" redcap:FieldType="text" redcap:TextValidationType="float" redcap:FieldNote="Amerikansk komma (.)" redcap:RequiredField="y">
+		<Question><TranslatedText>Prostata længe, CC (i cm)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mr_prostate_size_ap" Name="mr_prostate_size_ap" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="mr_prostate_size_ap" redcap:FieldType="text" redcap:TextValidationType="float" redcap:FieldNote="Amerikansk komma (.)" redcap:RequiredField="y">
+		<Question><TranslatedText>Prostata dybde, AP (i cm)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mr_prostate_size_rl" Name="mr_prostate_size_rl" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="mr_prostate_size_rl" redcap:FieldType="text" redcap:TextValidationType="float" redcap:FieldNote="Amerikansk komma (.)" redcap:RequiredField="y">
+		<Question><TranslatedText>Prostata brede, RL (i cm)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mr_prostata_volumen" Name="mr_prostata_volumen" DataType="float" Length="999" redcap:Variable="mr_prostata_volumen" redcap:FieldType="calc" redcap:Calculation="round([mr_prostate_size_ap]*[mr_prostate_size_rl]*[mr_prostate_size_cc]*0.52,2)">
+		<Question><TranslatedText>Prostatavolumen (cm3)</TranslatedText><redcap:FormattedTranslatedText>Prostatavolumen (cm&lt;sup&gt;3&lt;/sup&gt;)</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mr_psa_volumen" Name="mr_psa_volumen" DataType="float" Length="999" redcap:Variable="mr_psa_volumen" redcap:FieldType="calc" redcap:Calculation="round([prima_arm_1][biokemi_psa_psa_korrigeret][last-instance] / [mri_arm_1][mr_prostata_volumen][last-instance],2)">
+		<Question><TranslatedText>PSA / prostatavolumen 
+PSA = [prima_arm_1][biokemi_psa_psa_korrigeret][last-instance] µg/l</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mri_scanning_complete" Name="mri_scanning_complete" DataType="text" Length="1" redcap:Variable="mri_scanning_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="mri_scanning_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_dato" Name="lesion_dato" DataType="date" Length="999" redcap:Variable="lesion_dato" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:FieldNote="Hvis denne efterlades tom, kopiers datoen fra den &lt;b&gt;seneste&lt;/b&gt; MRI scanning">
+		<Question><TranslatedText>Scanningsdato</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="lesion_t2_a" Name="lesion_t2_a" DataType="text" Length="1" redcap:Variable="lesion_t2_a" redcap:FieldType="select" redcap:SectionHeader="Pakke A (ax T2 og DWI)">
+		<Question><TranslatedText>T2 morfologi (Pakke A)</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_t2_a.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_dwi_a" Name="lesion_dwi_a" DataType="text" Length="1" redcap:Variable="lesion_dwi_a" redcap:FieldType="select">
+		<Question><TranslatedText>DWI (Pakke A)</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_dwi_a.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_extraprostatisk_a" Name="lesion_extraprostatisk_a" DataType="text" Length="1" redcap:Variable="lesion_extraprostatisk_a" redcap:FieldType="select">
+		<Question><TranslatedText>Mistanke om ekstraprostatiske vækst (Pakke A)</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_extraprostatisk_a.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_pirads_a" Name="lesion_pirads_a" DataType="text" Length="1" redcap:Variable="lesion_pirads_a" redcap:FieldType="select">
+		<Question><TranslatedText>PiRADS score (Pakke A)</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_pirads_a.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_l_a___1" Name="lesion_apex_l_a___1" DataType="boolean" Length="1" redcap:Variable="lesion_apex_l_a" redcap:FieldType="checkbox" redcap:SectionHeader="Læsion lokation (Pakke A)
+&lt;img src=&quot;https://i.imgur.com/4BFHYCp.png&quot; alt=&quot;Lession map&quot; style=&quot;width:750px;&quot;&gt;" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Apex, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_l_a___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_l_a___2" Name="lesion_apex_l_a___2" DataType="boolean" Length="1" redcap:Variable="lesion_apex_l_a" redcap:FieldType="checkbox" redcap:SectionHeader="Læsion lokation (Pakke A)
+&lt;img src=&quot;https://i.imgur.com/4BFHYCp.png&quot; alt=&quot;Lession map&quot; style=&quot;width:750px;&quot;&gt;" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Apex, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_l_a___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_l_a___3" Name="lesion_apex_l_a___3" DataType="boolean" Length="1" redcap:Variable="lesion_apex_l_a" redcap:FieldType="checkbox" redcap:SectionHeader="Læsion lokation (Pakke A)
+&lt;img src=&quot;https://i.imgur.com/4BFHYCp.png&quot; alt=&quot;Lession map&quot; style=&quot;width:750px;&quot;&gt;" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Apex, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_l_a___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_l_a___4" Name="lesion_apex_l_a___4" DataType="boolean" Length="1" redcap:Variable="lesion_apex_l_a" redcap:FieldType="checkbox" redcap:SectionHeader="Læsion lokation (Pakke A)
+&lt;img src=&quot;https://i.imgur.com/4BFHYCp.png&quot; alt=&quot;Lession map&quot; style=&quot;width:750px;&quot;&gt;" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Apex, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_l_a___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_l_a___5" Name="lesion_apex_l_a___5" DataType="boolean" Length="1" redcap:Variable="lesion_apex_l_a" redcap:FieldType="checkbox" redcap:SectionHeader="Læsion lokation (Pakke A)
+&lt;img src=&quot;https://i.imgur.com/4BFHYCp.png&quot; alt=&quot;Lession map&quot; style=&quot;width:750px;&quot;&gt;" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Apex, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_l_a___5.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_l_a___6" Name="lesion_apex_l_a___6" DataType="boolean" Length="1" redcap:Variable="lesion_apex_l_a" redcap:FieldType="checkbox" redcap:SectionHeader="Læsion lokation (Pakke A)
+&lt;img src=&quot;https://i.imgur.com/4BFHYCp.png&quot; alt=&quot;Lession map&quot; style=&quot;width:750px;&quot;&gt;" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Apex, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_l_a___6.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_l_a___1" Name="lesion_mid_l_a___1" DataType="boolean" Length="1" redcap:Variable="lesion_mid_l_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Mid, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_l_a___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_l_a___2" Name="lesion_mid_l_a___2" DataType="boolean" Length="1" redcap:Variable="lesion_mid_l_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Mid, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_l_a___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_l_a___3" Name="lesion_mid_l_a___3" DataType="boolean" Length="1" redcap:Variable="lesion_mid_l_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Mid, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_l_a___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_l_a___4" Name="lesion_mid_l_a___4" DataType="boolean" Length="1" redcap:Variable="lesion_mid_l_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Mid, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_l_a___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_l_a___5" Name="lesion_mid_l_a___5" DataType="boolean" Length="1" redcap:Variable="lesion_mid_l_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Mid, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_l_a___5.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_l_a___6" Name="lesion_mid_l_a___6" DataType="boolean" Length="1" redcap:Variable="lesion_mid_l_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Mid, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_l_a___6.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_l_a___1" Name="lesion_base_l_a___1" DataType="boolean" Length="1" redcap:Variable="lesion_base_l_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Base, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_l_a___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_l_a___2" Name="lesion_base_l_a___2" DataType="boolean" Length="1" redcap:Variable="lesion_base_l_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Base, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_l_a___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_l_a___3" Name="lesion_base_l_a___3" DataType="boolean" Length="1" redcap:Variable="lesion_base_l_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Base, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_l_a___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_l_a___4" Name="lesion_base_l_a___4" DataType="boolean" Length="1" redcap:Variable="lesion_base_l_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Base, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_l_a___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_l_a___5" Name="lesion_base_l_a___5" DataType="boolean" Length="1" redcap:Variable="lesion_base_l_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Base, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_l_a___5.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_l_a___6" Name="lesion_base_l_a___6" DataType="boolean" Length="1" redcap:Variable="lesion_base_l_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Base, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_l_a___6.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_r_a___1" Name="lesion_apex_r_a___1" DataType="boolean" Length="1" redcap:Variable="lesion_apex_r_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Apex, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_r_a___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_r_a___2" Name="lesion_apex_r_a___2" DataType="boolean" Length="1" redcap:Variable="lesion_apex_r_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Apex, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_r_a___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_r_a___3" Name="lesion_apex_r_a___3" DataType="boolean" Length="1" redcap:Variable="lesion_apex_r_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Apex, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_r_a___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_r_a___4" Name="lesion_apex_r_a___4" DataType="boolean" Length="1" redcap:Variable="lesion_apex_r_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Apex, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_r_a___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_r_a___5" Name="lesion_apex_r_a___5" DataType="boolean" Length="1" redcap:Variable="lesion_apex_r_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Apex, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_r_a___5.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_r_a___6" Name="lesion_apex_r_a___6" DataType="boolean" Length="1" redcap:Variable="lesion_apex_r_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Apex, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_r_a___6.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_r_a___1" Name="lesion_mid_r_a___1" DataType="boolean" Length="1" redcap:Variable="lesion_mid_r_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Mid, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_r_a___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_r_a___2" Name="lesion_mid_r_a___2" DataType="boolean" Length="1" redcap:Variable="lesion_mid_r_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Mid, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_r_a___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_r_a___3" Name="lesion_mid_r_a___3" DataType="boolean" Length="1" redcap:Variable="lesion_mid_r_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Mid, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_r_a___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_r_a___4" Name="lesion_mid_r_a___4" DataType="boolean" Length="1" redcap:Variable="lesion_mid_r_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Mid, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_r_a___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_r_a___5" Name="lesion_mid_r_a___5" DataType="boolean" Length="1" redcap:Variable="lesion_mid_r_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Mid, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_r_a___5.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_r_a___6" Name="lesion_mid_r_a___6" DataType="boolean" Length="1" redcap:Variable="lesion_mid_r_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Mid, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_r_a___6.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_r_a___1" Name="lesion_base_r_a___1" DataType="boolean" Length="1" redcap:Variable="lesion_base_r_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Base, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_r_a___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_r_a___2" Name="lesion_base_r_a___2" DataType="boolean" Length="1" redcap:Variable="lesion_base_r_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Base, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_r_a___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_r_a___3" Name="lesion_base_r_a___3" DataType="boolean" Length="1" redcap:Variable="lesion_base_r_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Base, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_r_a___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_r_a___4" Name="lesion_base_r_a___4" DataType="boolean" Length="1" redcap:Variable="lesion_base_r_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Base, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_r_a___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_r_a___5" Name="lesion_base_r_a___5" DataType="boolean" Length="1" redcap:Variable="lesion_base_r_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Base, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_r_a___5.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_r_a___6" Name="lesion_base_r_a___6" DataType="boolean" Length="1" redcap:Variable="lesion_base_r_a" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_a">
+		<Question><TranslatedText>Base, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_r_a___6.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_size_cc" Name="lesion_size_cc" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="lesion_size_cc" redcap:FieldType="text" redcap:TextValidationType="float" redcap:SectionHeader="Læsion generelt" redcap:RequiredField="y">
+		<Question><TranslatedText>Læsion længe, CC (i mm)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="lesion_size_ap" Name="lesion_size_ap" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="lesion_size_ap" redcap:FieldType="text" redcap:TextValidationType="float" redcap:RequiredField="y">
+		<Question><TranslatedText>Læsion dybde, AP (i mm)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="lesion_size_rl" Name="lesion_size_rl" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="lesion_size_rl" redcap:FieldType="text" redcap:TextValidationType="float" redcap:RequiredField="y">
+		<Question><TranslatedText>Læsion brede, RL (i mm)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="lesion_volumen" Name="lesion_volumen" DataType="float" Length="999" redcap:Variable="lesion_volumen" redcap:FieldType="calc" redcap:Calculation="round([lesion_size_ap]*[lesion_size_rl]*[lesion_size_cc]*0.52/1000,2)">
+		<Question><TranslatedText>Læsionvolumen (cm3)</TranslatedText><redcap:FormattedTranslatedText>Læsionvolumen (cm&lt;sup&gt;3&lt;/sup&gt;)</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="lesion_adc" Name="lesion_adc" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="lesion_adc" redcap:FieldType="text" redcap:TextValidationType="float" redcap:RequiredField="y">
+		<Question><TranslatedText>ADC lavest</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="lesion_t2_b" Name="lesion_t2_b" DataType="text" Length="1" redcap:Variable="lesion_t2_b" redcap:FieldType="select" redcap:SectionHeader="Pakke B (ax, cor og sag T2 + DWI)">
+		<Question><TranslatedText>T2 morfologi (Pakke B)</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_t2_b.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_dwi_b" Name="lesion_dwi_b" DataType="text" Length="1" redcap:Variable="lesion_dwi_b" redcap:FieldType="select">
+		<Question><TranslatedText>DWI (Pakke B)</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_dwi_b.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_extraprostatisk_b" Name="lesion_extraprostatisk_b" DataType="text" Length="1" redcap:Variable="lesion_extraprostatisk_b" redcap:FieldType="select">
+		<Question><TranslatedText>Mistanke om ekstraprostatiske vækst (Pakke B)</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_extraprostatisk_b.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_pirads_b" Name="lesion_pirads_b" DataType="text" Length="1" redcap:Variable="lesion_pirads_b" redcap:FieldType="select">
+		<Question><TranslatedText>PiRADS score (Pakke B)</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_pirads_b.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_l_b___1" Name="lesion_apex_l_b___1" DataType="boolean" Length="1" redcap:Variable="lesion_apex_l_b" redcap:FieldType="checkbox" redcap:SectionHeader="Læsion lokation (Pakke B)
+&lt;img src=&quot;https://i.imgur.com/4BFHYCp.png&quot; alt=&quot;Lession map&quot; style=&quot;width:750px;&quot;&gt;" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Apex, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_l_b___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_l_b___2" Name="lesion_apex_l_b___2" DataType="boolean" Length="1" redcap:Variable="lesion_apex_l_b" redcap:FieldType="checkbox" redcap:SectionHeader="Læsion lokation (Pakke B)
+&lt;img src=&quot;https://i.imgur.com/4BFHYCp.png&quot; alt=&quot;Lession map&quot; style=&quot;width:750px;&quot;&gt;" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Apex, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_l_b___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_l_b___3" Name="lesion_apex_l_b___3" DataType="boolean" Length="1" redcap:Variable="lesion_apex_l_b" redcap:FieldType="checkbox" redcap:SectionHeader="Læsion lokation (Pakke B)
+&lt;img src=&quot;https://i.imgur.com/4BFHYCp.png&quot; alt=&quot;Lession map&quot; style=&quot;width:750px;&quot;&gt;" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Apex, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_l_b___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_l_b___4" Name="lesion_apex_l_b___4" DataType="boolean" Length="1" redcap:Variable="lesion_apex_l_b" redcap:FieldType="checkbox" redcap:SectionHeader="Læsion lokation (Pakke B)
+&lt;img src=&quot;https://i.imgur.com/4BFHYCp.png&quot; alt=&quot;Lession map&quot; style=&quot;width:750px;&quot;&gt;" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Apex, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_l_b___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_l_b___5" Name="lesion_apex_l_b___5" DataType="boolean" Length="1" redcap:Variable="lesion_apex_l_b" redcap:FieldType="checkbox" redcap:SectionHeader="Læsion lokation (Pakke B)
+&lt;img src=&quot;https://i.imgur.com/4BFHYCp.png&quot; alt=&quot;Lession map&quot; style=&quot;width:750px;&quot;&gt;" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Apex, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_l_b___5.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_l_b___6" Name="lesion_apex_l_b___6" DataType="boolean" Length="1" redcap:Variable="lesion_apex_l_b" redcap:FieldType="checkbox" redcap:SectionHeader="Læsion lokation (Pakke B)
+&lt;img src=&quot;https://i.imgur.com/4BFHYCp.png&quot; alt=&quot;Lession map&quot; style=&quot;width:750px;&quot;&gt;" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Apex, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_l_b___6.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_l_b___1" Name="lesion_mid_l_b___1" DataType="boolean" Length="1" redcap:Variable="lesion_mid_l_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Mid, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_l_b___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_l_b___2" Name="lesion_mid_l_b___2" DataType="boolean" Length="1" redcap:Variable="lesion_mid_l_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Mid, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_l_b___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_l_b___3" Name="lesion_mid_l_b___3" DataType="boolean" Length="1" redcap:Variable="lesion_mid_l_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Mid, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_l_b___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_l_b___4" Name="lesion_mid_l_b___4" DataType="boolean" Length="1" redcap:Variable="lesion_mid_l_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Mid, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_l_b___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_l_b___5" Name="lesion_mid_l_b___5" DataType="boolean" Length="1" redcap:Variable="lesion_mid_l_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Mid, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_l_b___5.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_l_b___6" Name="lesion_mid_l_b___6" DataType="boolean" Length="1" redcap:Variable="lesion_mid_l_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Mid, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_l_b___6.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_l_b___1" Name="lesion_base_l_b___1" DataType="boolean" Length="1" redcap:Variable="lesion_base_l_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Base, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_l_b___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_l_b___2" Name="lesion_base_l_b___2" DataType="boolean" Length="1" redcap:Variable="lesion_base_l_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Base, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_l_b___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_l_b___3" Name="lesion_base_l_b___3" DataType="boolean" Length="1" redcap:Variable="lesion_base_l_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Base, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_l_b___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_l_b___4" Name="lesion_base_l_b___4" DataType="boolean" Length="1" redcap:Variable="lesion_base_l_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Base, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_l_b___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_l_b___5" Name="lesion_base_l_b___5" DataType="boolean" Length="1" redcap:Variable="lesion_base_l_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Base, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_l_b___5.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_l_b___6" Name="lesion_base_l_b___6" DataType="boolean" Length="1" redcap:Variable="lesion_base_l_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Base, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_l_b___6.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_r_b___1" Name="lesion_apex_r_b___1" DataType="boolean" Length="1" redcap:Variable="lesion_apex_r_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Apex, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_r_b___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_r_b___2" Name="lesion_apex_r_b___2" DataType="boolean" Length="1" redcap:Variable="lesion_apex_r_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Apex, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_r_b___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_r_b___3" Name="lesion_apex_r_b___3" DataType="boolean" Length="1" redcap:Variable="lesion_apex_r_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Apex, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_r_b___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_r_b___4" Name="lesion_apex_r_b___4" DataType="boolean" Length="1" redcap:Variable="lesion_apex_r_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Apex, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_r_b___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_r_b___5" Name="lesion_apex_r_b___5" DataType="boolean" Length="1" redcap:Variable="lesion_apex_r_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Apex, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_r_b___5.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_r_b___6" Name="lesion_apex_r_b___6" DataType="boolean" Length="1" redcap:Variable="lesion_apex_r_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Apex, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_r_b___6.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_r_b___1" Name="lesion_mid_r_b___1" DataType="boolean" Length="1" redcap:Variable="lesion_mid_r_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Mid, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_r_b___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_r_b___2" Name="lesion_mid_r_b___2" DataType="boolean" Length="1" redcap:Variable="lesion_mid_r_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Mid, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_r_b___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_r_b___3" Name="lesion_mid_r_b___3" DataType="boolean" Length="1" redcap:Variable="lesion_mid_r_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Mid, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_r_b___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_r_b___4" Name="lesion_mid_r_b___4" DataType="boolean" Length="1" redcap:Variable="lesion_mid_r_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Mid, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_r_b___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_r_b___5" Name="lesion_mid_r_b___5" DataType="boolean" Length="1" redcap:Variable="lesion_mid_r_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Mid, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_r_b___5.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_r_b___6" Name="lesion_mid_r_b___6" DataType="boolean" Length="1" redcap:Variable="lesion_mid_r_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Mid, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_r_b___6.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_r_b___1" Name="lesion_base_r_b___1" DataType="boolean" Length="1" redcap:Variable="lesion_base_r_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Base, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_r_b___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_r_b___2" Name="lesion_base_r_b___2" DataType="boolean" Length="1" redcap:Variable="lesion_base_r_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Base, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_r_b___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_r_b___3" Name="lesion_base_r_b___3" DataType="boolean" Length="1" redcap:Variable="lesion_base_r_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Base, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_r_b___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_r_b___4" Name="lesion_base_r_b___4" DataType="boolean" Length="1" redcap:Variable="lesion_base_r_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Base, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_r_b___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_r_b___5" Name="lesion_base_r_b___5" DataType="boolean" Length="1" redcap:Variable="lesion_base_r_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Base, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_r_b___5.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_r_b___6" Name="lesion_base_r_b___6" DataType="boolean" Length="1" redcap:Variable="lesion_base_r_b" redcap:FieldType="checkbox" redcap:MatrixGroupName="lesion_location_b">
+		<Question><TranslatedText>Base, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_r_b___6.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_t2_c" Name="lesion_t2_c" DataType="text" Length="1" redcap:Variable="lesion_t2_c" redcap:FieldType="select" redcap:SectionHeader="Pakke C (ax, cor og sag T2 + DWI &amp; kontrastsekvens)" redcap:RequiredField="y" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;">
+		<Question><TranslatedText>T2 morfologi (Pakke C)</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_t2_c.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_dwi_c" Name="lesion_dwi_c" DataType="text" Length="1" redcap:Variable="lesion_dwi_c" redcap:FieldType="select" redcap:RequiredField="y" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;">
+		<Question><TranslatedText>DWI (Pakke C)</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_dwi_c.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_dce_c" Name="lesion_dce_c" DataType="text" Length="1" redcap:Variable="lesion_dce_c" redcap:FieldType="select" redcap:RequiredField="y" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;">
+		<Question><TranslatedText>DCE (kontrast, Pakke C)</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_dce_c.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_extraprostatisk_c" Name="lesion_extraprostatisk_c" DataType="text" Length="1" redcap:Variable="lesion_extraprostatisk_c" redcap:FieldType="select" redcap:RequiredField="y" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;">
+		<Question><TranslatedText>Mistanke om ekstraprostatiske vækst (Pakke C)</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_extraprostatisk_c.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_pirads_c" Name="lesion_pirads_c" DataType="text" Length="1" redcap:Variable="lesion_pirads_c" redcap:FieldType="select" redcap:RequiredField="y" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;">
+		<Question><TranslatedText>PiRADS score (Pakke C)</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_pirads_c.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_l_c___1" Name="lesion_apex_l_c___1" DataType="boolean" Length="1" redcap:Variable="lesion_apex_l_c" redcap:FieldType="checkbox" redcap:SectionHeader="Læsion lokation (Pakke C)
+&lt;img src=&quot;https://i.imgur.com/4BFHYCp.png&quot; alt=&quot;Lession map&quot; style=&quot;width:750px;&quot;&gt;" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Apex, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_l_c___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_l_c___2" Name="lesion_apex_l_c___2" DataType="boolean" Length="1" redcap:Variable="lesion_apex_l_c" redcap:FieldType="checkbox" redcap:SectionHeader="Læsion lokation (Pakke C)
+&lt;img src=&quot;https://i.imgur.com/4BFHYCp.png&quot; alt=&quot;Lession map&quot; style=&quot;width:750px;&quot;&gt;" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Apex, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_l_c___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_l_c___3" Name="lesion_apex_l_c___3" DataType="boolean" Length="1" redcap:Variable="lesion_apex_l_c" redcap:FieldType="checkbox" redcap:SectionHeader="Læsion lokation (Pakke C)
+&lt;img src=&quot;https://i.imgur.com/4BFHYCp.png&quot; alt=&quot;Lession map&quot; style=&quot;width:750px;&quot;&gt;" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Apex, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_l_c___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_l_c___4" Name="lesion_apex_l_c___4" DataType="boolean" Length="1" redcap:Variable="lesion_apex_l_c" redcap:FieldType="checkbox" redcap:SectionHeader="Læsion lokation (Pakke C)
+&lt;img src=&quot;https://i.imgur.com/4BFHYCp.png&quot; alt=&quot;Lession map&quot; style=&quot;width:750px;&quot;&gt;" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Apex, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_l_c___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_l_c___5" Name="lesion_apex_l_c___5" DataType="boolean" Length="1" redcap:Variable="lesion_apex_l_c" redcap:FieldType="checkbox" redcap:SectionHeader="Læsion lokation (Pakke C)
+&lt;img src=&quot;https://i.imgur.com/4BFHYCp.png&quot; alt=&quot;Lession map&quot; style=&quot;width:750px;&quot;&gt;" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Apex, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_l_c___5.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_l_c___6" Name="lesion_apex_l_c___6" DataType="boolean" Length="1" redcap:Variable="lesion_apex_l_c" redcap:FieldType="checkbox" redcap:SectionHeader="Læsion lokation (Pakke C)
+&lt;img src=&quot;https://i.imgur.com/4BFHYCp.png&quot; alt=&quot;Lession map&quot; style=&quot;width:750px;&quot;&gt;" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Apex, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_l_c___6.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_l_c___1" Name="lesion_mid_l_c___1" DataType="boolean" Length="1" redcap:Variable="lesion_mid_l_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Mid, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_l_c___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_l_c___2" Name="lesion_mid_l_c___2" DataType="boolean" Length="1" redcap:Variable="lesion_mid_l_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Mid, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_l_c___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_l_c___3" Name="lesion_mid_l_c___3" DataType="boolean" Length="1" redcap:Variable="lesion_mid_l_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Mid, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_l_c___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_l_c___4" Name="lesion_mid_l_c___4" DataType="boolean" Length="1" redcap:Variable="lesion_mid_l_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Mid, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_l_c___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_l_c___5" Name="lesion_mid_l_c___5" DataType="boolean" Length="1" redcap:Variable="lesion_mid_l_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Mid, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_l_c___5.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_l_c___6" Name="lesion_mid_l_c___6" DataType="boolean" Length="1" redcap:Variable="lesion_mid_l_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Mid, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_l_c___6.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_l_c___1" Name="lesion_base_l_c___1" DataType="boolean" Length="1" redcap:Variable="lesion_base_l_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Base, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_l_c___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_l_c___2" Name="lesion_base_l_c___2" DataType="boolean" Length="1" redcap:Variable="lesion_base_l_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Base, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_l_c___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_l_c___3" Name="lesion_base_l_c___3" DataType="boolean" Length="1" redcap:Variable="lesion_base_l_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Base, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_l_c___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_l_c___4" Name="lesion_base_l_c___4" DataType="boolean" Length="1" redcap:Variable="lesion_base_l_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Base, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_l_c___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_l_c___5" Name="lesion_base_l_c___5" DataType="boolean" Length="1" redcap:Variable="lesion_base_l_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Base, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_l_c___5.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_l_c___6" Name="lesion_base_l_c___6" DataType="boolean" Length="1" redcap:Variable="lesion_base_l_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Base, left side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_l_c___6.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_r_c___1" Name="lesion_apex_r_c___1" DataType="boolean" Length="1" redcap:Variable="lesion_apex_r_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Apex, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_r_c___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_r_c___2" Name="lesion_apex_r_c___2" DataType="boolean" Length="1" redcap:Variable="lesion_apex_r_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Apex, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_r_c___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_r_c___3" Name="lesion_apex_r_c___3" DataType="boolean" Length="1" redcap:Variable="lesion_apex_r_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Apex, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_r_c___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_r_c___4" Name="lesion_apex_r_c___4" DataType="boolean" Length="1" redcap:Variable="lesion_apex_r_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Apex, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_r_c___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_r_c___5" Name="lesion_apex_r_c___5" DataType="boolean" Length="1" redcap:Variable="lesion_apex_r_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Apex, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_r_c___5.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_apex_r_c___6" Name="lesion_apex_r_c___6" DataType="boolean" Length="1" redcap:Variable="lesion_apex_r_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Apex, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_apex_r_c___6.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_r_c___1" Name="lesion_mid_r_c___1" DataType="boolean" Length="1" redcap:Variable="lesion_mid_r_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Mid, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_r_c___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_r_c___2" Name="lesion_mid_r_c___2" DataType="boolean" Length="1" redcap:Variable="lesion_mid_r_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Mid, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_r_c___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_r_c___3" Name="lesion_mid_r_c___3" DataType="boolean" Length="1" redcap:Variable="lesion_mid_r_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Mid, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_r_c___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_r_c___4" Name="lesion_mid_r_c___4" DataType="boolean" Length="1" redcap:Variable="lesion_mid_r_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Mid, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_r_c___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_r_c___5" Name="lesion_mid_r_c___5" DataType="boolean" Length="1" redcap:Variable="lesion_mid_r_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Mid, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_r_c___5.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_mid_r_c___6" Name="lesion_mid_r_c___6" DataType="boolean" Length="1" redcap:Variable="lesion_mid_r_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Mid, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_mid_r_c___6.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_r_c___1" Name="lesion_base_r_c___1" DataType="boolean" Length="1" redcap:Variable="lesion_base_r_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Base, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_r_c___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_r_c___2" Name="lesion_base_r_c___2" DataType="boolean" Length="1" redcap:Variable="lesion_base_r_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Base, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_r_c___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_r_c___3" Name="lesion_base_r_c___3" DataType="boolean" Length="1" redcap:Variable="lesion_base_r_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Base, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_r_c___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_r_c___4" Name="lesion_base_r_c___4" DataType="boolean" Length="1" redcap:Variable="lesion_base_r_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Base, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_r_c___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_r_c___5" Name="lesion_base_r_c___5" DataType="boolean" Length="1" redcap:Variable="lesion_base_r_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Base, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_r_c___5.choices"/>
+	</ItemDef>
+	<ItemDef OID="lesion_base_r_c___6" Name="lesion_base_r_c___6" DataType="boolean" Length="1" redcap:Variable="lesion_base_r_c" redcap:FieldType="checkbox" redcap:BranchingLogic="[mr_pakke] = &#039;1&#039;" redcap:MatrixGroupName="lesion_location_c">
+		<Question><TranslatedText>Base, right side</TranslatedText></Question>
+		<CodeListRef CodeListOID="lesion_base_r_c___6.choices"/>
+	</ItemDef>
+	<ItemDef OID="mrgb_dato" Name="mrgb_dato" DataType="date" Length="999" redcap:Variable="mrgb_dato" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:SectionHeader="MRBG">
+		<Question><TranslatedText>Dato for MRGB</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_antal" Name="mrgb_antal" DataType="text" Length="1" redcap:Variable="mrgb_antal" redcap:FieldType="select">
+		<Question><TranslatedText>Antal indstik</TranslatedText></Question>
+		<CodeListRef CodeListOID="mrgb_antal.choices"/>
+	</ItemDef>
+	<ItemDef OID="mrgb_totallength_1" Name="mrgb_totallength_1" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="mrgb_totallength_1" redcap:FieldType="text" redcap:TextValidationType="float" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;1&#039;">
+		<Question><TranslatedText>Nål 1, biopsi totallængden (mm)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_carsinomlength_1" Name="mrgb_carsinomlength_1" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="mrgb_carsinomlength_1" redcap:FieldType="text" redcap:TextValidationType="float" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;1&#039;">
+		<Question><TranslatedText>Nål 1, carcinomlængde (mm)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_carsinomprocent_1" Name="mrgb_carsinomprocent_1" DataType="float" Length="999" redcap:Variable="mrgb_carsinomprocent_1" redcap:FieldType="calc" redcap:Calculation="round([mrgb_carsinomlength_1]/[mrgb_totallength_1]*100,1)" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;1&#039;">
+		<Question><TranslatedText>Nål 1, carsinom %</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_carsinompatologi_1" Name="mrgb_carsinompatologi_1" DataType="text" Length="999" redcap:Variable="mrgb_carsinompatologi_1" redcap:FieldType="text" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;1&#039; AND [mrgb_carsinomlength_1] = &#039;0&#039;">
+		<Question><TranslatedText>Nål 1, Patologisk beskrivelse</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_gleason1_1" Name="mrgb_gleason1_1" DataType="text" Length="1" redcap:Variable="mrgb_gleason1_1" redcap:FieldType="select" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;1&#039; AND [mrgb_carsinomlength_1] &lt;&gt; &#039;0&#039;">
+		<Question><TranslatedText>Nål 1, Gleason Score 1</TranslatedText></Question>
+		<CodeListRef CodeListOID="mrgb_gleason1_1.choices"/>
+	</ItemDef>
+	<ItemDef OID="mrgb_gleason2_1" Name="mrgb_gleason2_1" DataType="text" Length="1" redcap:Variable="mrgb_gleason2_1" redcap:FieldType="select" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;1&#039; AND [mrgb_carsinomlength_1] &lt;&gt; &#039;0&#039;">
+		<Question><TranslatedText>Nål 1, Gleason Score 2</TranslatedText></Question>
+		<CodeListRef CodeListOID="mrgb_gleason2_1.choices"/>
+	</ItemDef>
+	<ItemDef OID="mrgb_gleason_sum_1" Name="mrgb_gleason_sum_1" DataType="float" Length="999" redcap:Variable="mrgb_gleason_sum_1" redcap:FieldType="calc" redcap:Calculation="[mrgb_gleason1_1]+[mrgb_gleason2_1]" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;1&#039; AND [mrgb_carsinomlength_1] &lt;&gt; &#039;0&#039;">
+		<Question><TranslatedText>Nål 1, Gleason Score sum</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_totallength_2" Name="mrgb_totallength_2" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="mrgb_totallength_2" redcap:FieldType="text" redcap:TextValidationType="float" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;2&#039;">
+		<Question><TranslatedText>Nål 2, biopsi totallængden (mm)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_carsinomlength_2" Name="mrgb_carsinomlength_2" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="mrgb_carsinomlength_2" redcap:FieldType="text" redcap:TextValidationType="float" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;2&#039;">
+		<Question><TranslatedText>Nål 2, carcinomlængde (mm)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_carsinomprocent_2" Name="mrgb_carsinomprocent_2" DataType="float" Length="999" redcap:Variable="mrgb_carsinomprocent_2" redcap:FieldType="calc" redcap:Calculation="round([mrgb_carsinomlength_2]/[mrgb_totallength_2]*100,1)" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;2&#039;">
+		<Question><TranslatedText>Nål 2, carsinom %</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_carsinompatologi_2" Name="mrgb_carsinompatologi_2" DataType="text" Length="999" redcap:Variable="mrgb_carsinompatologi_2" redcap:FieldType="text" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;2&#039; AND [mrgb_carsinomlength_2] = &#039;0&#039;">
+		<Question><TranslatedText>Nål 2, Patologisk beskrivelse</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_gleason1_2" Name="mrgb_gleason1_2" DataType="text" Length="1" redcap:Variable="mrgb_gleason1_2" redcap:FieldType="select" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;2&#039; AND [mrgb_carsinomlength_2] &lt;&gt; &#039;0&#039;">
+		<Question><TranslatedText>Nål 2, Gleason Score 1</TranslatedText></Question>
+		<CodeListRef CodeListOID="mrgb_gleason1_2.choices"/>
+	</ItemDef>
+	<ItemDef OID="mrgb_gleason2_2" Name="mrgb_gleason2_2" DataType="text" Length="1" redcap:Variable="mrgb_gleason2_2" redcap:FieldType="select" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;2&#039; AND [mrgb_carsinomlength_2] &lt;&gt; &#039;0&#039;">
+		<Question><TranslatedText>Nål 2, Gleason Score 2</TranslatedText></Question>
+		<CodeListRef CodeListOID="mrgb_gleason2_2.choices"/>
+	</ItemDef>
+	<ItemDef OID="mrgb_gleason_sum_2" Name="mrgb_gleason_sum_2" DataType="float" Length="999" redcap:Variable="mrgb_gleason_sum_2" redcap:FieldType="calc" redcap:Calculation="[mrgb_gleason1_2]+[mrgb_gleason2_2]" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;2&#039; AND [mrgb_carsinomlength_2] &lt;&gt; &#039;0&#039;">
+		<Question><TranslatedText>Nål 2, Gleason Score sum</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_totallength_3" Name="mrgb_totallength_3" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="mrgb_totallength_3" redcap:FieldType="text" redcap:TextValidationType="float" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;3&#039;">
+		<Question><TranslatedText>Nål 3, biopsi totallængden (mm)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_carsinomlength_3" Name="mrgb_carsinomlength_3" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="mrgb_carsinomlength_3" redcap:FieldType="text" redcap:TextValidationType="float" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;3&#039;">
+		<Question><TranslatedText>Nål 3, carcinomlængde (mm)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_carsinomprocent_3" Name="mrgb_carsinomprocent_3" DataType="float" Length="999" redcap:Variable="mrgb_carsinomprocent_3" redcap:FieldType="calc" redcap:Calculation="round([mrgb_carsinomlength_3]/[mrgb_totallength_3]*100,1)" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;3&#039;">
+		<Question><TranslatedText>Nål 3, carsinom %</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_carsinompatologi_3" Name="mrgb_carsinompatologi_3" DataType="text" Length="999" redcap:Variable="mrgb_carsinompatologi_3" redcap:FieldType="text" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;3&#039; AND [mrgb_carsinomlength_3] = &#039;0&#039;">
+		<Question><TranslatedText>Nål 3, Patologisk beskrivelse</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_gleason1_3" Name="mrgb_gleason1_3" DataType="text" Length="1" redcap:Variable="mrgb_gleason1_3" redcap:FieldType="select" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;3&#039; AND [mrgb_carsinomlength_3] &lt;&gt; &#039;0&#039;">
+		<Question><TranslatedText>Nål 3, Gleason Score 1</TranslatedText></Question>
+		<CodeListRef CodeListOID="mrgb_gleason1_3.choices"/>
+	</ItemDef>
+	<ItemDef OID="mrgb_gleason2_3" Name="mrgb_gleason2_3" DataType="text" Length="1" redcap:Variable="mrgb_gleason2_3" redcap:FieldType="select" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;3&#039; AND [mrgb_carsinomlength_3] &lt;&gt; &#039;0&#039;">
+		<Question><TranslatedText>Nål 3, Gleason Score 2</TranslatedText></Question>
+		<CodeListRef CodeListOID="mrgb_gleason2_3.choices"/>
+	</ItemDef>
+	<ItemDef OID="mrgb_gleason_sum_3" Name="mrgb_gleason_sum_3" DataType="float" Length="999" redcap:Variable="mrgb_gleason_sum_3" redcap:FieldType="calc" redcap:Calculation="[mrgb_gleason1_3]+[mrgb_gleason2_3]" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;3&#039; AND [mrgb_carsinomlength_3] &lt;&gt; &#039;0&#039;">
+		<Question><TranslatedText>Nål 3, Gleason Score sum</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_totallength_4" Name="mrgb_totallength_4" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="mrgb_totallength_4" redcap:FieldType="text" redcap:TextValidationType="float" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;4&#039;">
+		<Question><TranslatedText>Nål 4, biopsi totallængden (mm)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_carsinomlength_4" Name="mrgb_carsinomlength_4" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="mrgb_carsinomlength_4" redcap:FieldType="text" redcap:TextValidationType="float" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;4&#039;">
+		<Question><TranslatedText>Nål 4, carcinomlængde (mm)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_carsinomprocent_4" Name="mrgb_carsinomprocent_4" DataType="float" Length="999" redcap:Variable="mrgb_carsinomprocent_4" redcap:FieldType="calc" redcap:Calculation="round([mrgb_carsinomlength_4]/[mrgb_totallength_4]*100,1)" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;4&#039;">
+		<Question><TranslatedText>Nål 4, carsinom %</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_carsinompatologi_4" Name="mrgb_carsinompatologi_4" DataType="text" Length="999" redcap:Variable="mrgb_carsinompatologi_4" redcap:FieldType="text" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;4&#039; AND [mrgb_carsinomlength_4] = &#039;0&#039;">
+		<Question><TranslatedText>Nål 4, Patologisk beskrivelse</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_gleason1_4" Name="mrgb_gleason1_4" DataType="text" Length="1" redcap:Variable="mrgb_gleason1_4" redcap:FieldType="select" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;4&#039; AND [mrgb_carsinomlength_4] &lt;&gt; &#039;0&#039;">
+		<Question><TranslatedText>Nål 4, Gleason Score 1</TranslatedText></Question>
+		<CodeListRef CodeListOID="mrgb_gleason1_4.choices"/>
+	</ItemDef>
+	<ItemDef OID="mrgb_gleason2_4" Name="mrgb_gleason2_4" DataType="text" Length="1" redcap:Variable="mrgb_gleason2_4" redcap:FieldType="select" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;4&#039; AND [mrgb_carsinomlength_4] &lt;&gt; &#039;0&#039;">
+		<Question><TranslatedText>Nål 4, Gleason Score 2</TranslatedText></Question>
+		<CodeListRef CodeListOID="mrgb_gleason2_4.choices"/>
+	</ItemDef>
+	<ItemDef OID="mrgb_gleason_sum_4" Name="mrgb_gleason_sum_4" DataType="float" Length="999" redcap:Variable="mrgb_gleason_sum_4" redcap:FieldType="calc" redcap:Calculation="[mrgb_gleason1_4]+[mrgb_gleason2_4]" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;4&#039; AND [mrgb_carsinomlength_4] &lt;&gt; &#039;0&#039;">
+		<Question><TranslatedText>Nål 4, Gleason Score sum</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_totallength_5" Name="mrgb_totallength_5" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="mrgb_totallength_5" redcap:FieldType="text" redcap:TextValidationType="float" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;5&#039;">
+		<Question><TranslatedText>Nål 5, biopsi totallængden (mm)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_carsinomlength_5" Name="mrgb_carsinomlength_5" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="mrgb_carsinomlength_5" redcap:FieldType="text" redcap:TextValidationType="float" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;5&#039;">
+		<Question><TranslatedText>Nål 5, carcinomlængde (mm)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_carsinomprocent_5" Name="mrgb_carsinomprocent_5" DataType="float" Length="999" redcap:Variable="mrgb_carsinomprocent_5" redcap:FieldType="calc" redcap:Calculation="round([mrgb_carsinomlength_5]/[mrgb_totallength_5]*100,1)" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;5&#039;">
+		<Question><TranslatedText>Nål 5, carsinom %</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_carsinompatologi_5" Name="mrgb_carsinompatologi_5" DataType="text" Length="999" redcap:Variable="mrgb_carsinompatologi_5" redcap:FieldType="text" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;5&#039; AND [mrgb_carsinomlength_5] = &#039;0&#039;">
+		<Question><TranslatedText>Nål 5, Patologisk beskrivelse</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mrgb_gleason1_5" Name="mrgb_gleason1_5" DataType="text" Length="1" redcap:Variable="mrgb_gleason1_5" redcap:FieldType="select" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;5&#039; AND [mrgb_carsinomlength_5] &lt;&gt; &#039;0&#039;">
+		<Question><TranslatedText>Nål 5, Gleason Score 1</TranslatedText></Question>
+		<CodeListRef CodeListOID="mrgb_gleason1_5.choices"/>
+	</ItemDef>
+	<ItemDef OID="mrgb_gleason2_5" Name="mrgb_gleason2_5" DataType="text" Length="1" redcap:Variable="mrgb_gleason2_5" redcap:FieldType="select" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;5&#039; AND [mrgb_carsinomlength_5] &lt;&gt; &#039;0&#039;">
+		<Question><TranslatedText>Nål 5, Gleason Score 2</TranslatedText></Question>
+		<CodeListRef CodeListOID="mrgb_gleason2_5.choices"/>
+	</ItemDef>
+	<ItemDef OID="mrgb_gleason_sum_5" Name="mrgb_gleason_sum_5" DataType="float" Length="999" redcap:Variable="mrgb_gleason_sum_5" redcap:FieldType="calc" redcap:Calculation="[mrgb_gleason1_5]+[mrgb_gleason2_5]" redcap:BranchingLogic="[mrgb_antal] &gt;= &#039;5&#039; AND [mrgb_carsinomlength_5] &lt;&gt; &#039;0&#039;">
+		<Question><TranslatedText>Nål 5, Gleason Score sum</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="lsion_complete" Name="lsion_complete" DataType="text" Length="1" redcap:Variable="lsion_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="lsion_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="note_dato" Name="note_dato" DataType="date" Length="999" redcap:Variable="note_dato" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:FieldAnnotation="@TODAY @READONLY">
+		<Question><TranslatedText>Dato for note</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="note_note" Name="note_note" DataType="text" Length="999" redcap:Variable="note_note" redcap:FieldType="textarea">
+		<Question><TranslatedText>Noter</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="note_hvem" Name="note_hvem" DataType="text" Length="999" redcap:Variable="note_hvem" redcap:FieldType="text" redcap:FieldAnnotation="@USERNAME @READONLY">
+		<Question><TranslatedText>Note tilføjet af</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="noter_complete" Name="noter_complete" DataType="text" Length="1" redcap:Variable="noter_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="noter_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="flag_dato" Name="flag_dato" DataType="date" Length="999" redcap:Variable="flag_dato" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:FieldAnnotation="@TODAY @READONLY">
+		<Question><TranslatedText>Dato for flag</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="flag_problem" Name="flag_problem" DataType="text" Length="999" redcap:Variable="flag_problem" redcap:FieldType="textarea">
+		<Question><TranslatedText>Problem</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="flag_hvem" Name="flag_hvem" DataType="text" Length="999" redcap:Variable="flag_hvem" redcap:FieldType="text" redcap:FieldAnnotation="@USERNAME @READONLY">
+		<Question><TranslatedText>Oprettet af</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="flag_complete" Name="flag_complete" DataType="text" Length="1" redcap:Variable="flag_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="flag_complete.choices"/>
+	</ItemDef>
+	<CodeList OID="patient_samtykke.choices" Name="patient_samtykke" DataType="text" redcap:Variable="patient_samtykke">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Nej</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Ja</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Ja, men tilbagetrukket</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="9"><Decode><TranslatedText>Ved ikke</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="patient_samtykke_inform.choices" Name="patient_samtykke_inform" DataType="boolean" redcap:Variable="patient_samtykke_inform">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="patient_information_complete.choices" Name="patient_information_complete" DataType="text" redcap:Variable="patient_information_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="ap_samples_transferred.choices" Name="ap_samples_transferred" DataType="boolean" redcap:Variable="ap_samples_transferred">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="sthlm3_pcfamilie.choices" Name="sthlm3_pcfamilie" DataType="text" redcap:Variable="sthlm3_pcfamilie">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Ingen</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>En eller flere</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="9"><Decode><TranslatedText>Ved ikke</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="sthml3_5alfa.choices" Name="sthml3_5alfa" DataType="text" redcap:Variable="sthml3_5alfa">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Nej</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Ja</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="9"><Decode><TranslatedText>Ved ikke</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="almen_praksis_prver_complete.choices" Name="almen_praksis_prver_complete" DataType="text" redcap:Variable="almen_praksis_prver_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="biokemi_psa_svar.choices" Name="biokemi_psa_svar" DataType="boolean" redcap:Variable="biokemi_psa_svar">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="biokemisk_svar_psa_complete.choices" Name="biokemisk_svar_psa_complete" DataType="text" redcap:Variable="biokemisk_svar_psa_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="biokemi_sthlm3_sthlm3.choices" Name="biokemi_sthlm3_sthlm3" DataType="text" redcap:Variable="biokemi_sthlm3_sthlm3">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Negativ</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Positiv</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="99"><Decode><TranslatedText>Ikke udført</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="9999"><Decode><TranslatedText>Kunne ikke udføres/fejlet</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="biokemi_sthlm3_svar.choices" Name="biokemi_sthlm3_svar" DataType="boolean" redcap:Variable="biokemi_sthlm3_svar">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="biokemi_sthml3_svarurologi.choices" Name="biokemi_sthml3_svarurologi" DataType="boolean" redcap:Variable="biokemi_sthml3_svarurologi">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="biokemi_sthlm3_vol_sthlm3.choices" Name="biokemi_sthlm3_vol_sthlm3" DataType="text" redcap:Variable="biokemi_sthlm3_vol_sthlm3">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Negativ</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Positiv</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="99"><Decode><TranslatedText>Ikke udført</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="9999"><Decode><TranslatedText>Kunne ikke udføres/fejlet</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="biokemisk_svar_sthlm3_complete.choices" Name="biokemisk_svar_sthlm3_complete" DataType="text" redcap:Variable="biokemisk_svar_sthlm3_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="mr_blod.choices" Name="mr_blod" DataType="boolean" redcap:Variable="mr_blod">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="mr_urin.choices" Name="mr_urin" DataType="boolean" redcap:Variable="mr_urin">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="mr_samples_transferred.choices" Name="mr_samples_transferred" DataType="boolean" redcap:Variable="mr_samples_transferred">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="mr_pakke.choices" Name="mr_pakke" DataType="boolean" redcap:Variable="mr_pakke">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="mr_henvisende.choices" Name="mr_henvisende" DataType="text" redcap:Variable="mr_henvisende">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>AUH</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>HEV</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="9"><Decode><TranslatedText>Andet</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="mri_scanning_complete.choices" Name="mri_scanning_complete" DataType="text" redcap:Variable="mri_scanning_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_t2_a.choices" Name="lesion_t2_a" DataType="text" redcap:Variable="lesion_t2_a">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_dwi_a.choices" Name="lesion_dwi_a" DataType="text" redcap:Variable="lesion_dwi_a">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_extraprostatisk_a.choices" Name="lesion_extraprostatisk_a" DataType="text" redcap:Variable="lesion_extraprostatisk_a">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>nej</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>nej - minimal</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>ja - definitivt</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_pirads_a.choices" Name="lesion_pirads_a" DataType="text" redcap:Variable="lesion_pirads_a">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_l_a___1.choices" Name="lesion_apex_l_a___1" DataType="boolean" redcap:Variable="lesion_apex_l_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_l_a___2.choices" Name="lesion_apex_l_a___2" DataType="boolean" redcap:Variable="lesion_apex_l_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_l_a___3.choices" Name="lesion_apex_l_a___3" DataType="boolean" redcap:Variable="lesion_apex_l_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_l_a___4.choices" Name="lesion_apex_l_a___4" DataType="boolean" redcap:Variable="lesion_apex_l_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_l_a___5.choices" Name="lesion_apex_l_a___5" DataType="boolean" redcap:Variable="lesion_apex_l_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_l_a___6.choices" Name="lesion_apex_l_a___6" DataType="boolean" redcap:Variable="lesion_apex_l_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_l_a___1.choices" Name="lesion_mid_l_a___1" DataType="boolean" redcap:Variable="lesion_mid_l_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_l_a___2.choices" Name="lesion_mid_l_a___2" DataType="boolean" redcap:Variable="lesion_mid_l_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_l_a___3.choices" Name="lesion_mid_l_a___3" DataType="boolean" redcap:Variable="lesion_mid_l_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_l_a___4.choices" Name="lesion_mid_l_a___4" DataType="boolean" redcap:Variable="lesion_mid_l_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_l_a___5.choices" Name="lesion_mid_l_a___5" DataType="boolean" redcap:Variable="lesion_mid_l_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_l_a___6.choices" Name="lesion_mid_l_a___6" DataType="boolean" redcap:Variable="lesion_mid_l_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_l_a___1.choices" Name="lesion_base_l_a___1" DataType="boolean" redcap:Variable="lesion_base_l_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_l_a___2.choices" Name="lesion_base_l_a___2" DataType="boolean" redcap:Variable="lesion_base_l_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_l_a___3.choices" Name="lesion_base_l_a___3" DataType="boolean" redcap:Variable="lesion_base_l_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_l_a___4.choices" Name="lesion_base_l_a___4" DataType="boolean" redcap:Variable="lesion_base_l_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_l_a___5.choices" Name="lesion_base_l_a___5" DataType="boolean" redcap:Variable="lesion_base_l_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_l_a___6.choices" Name="lesion_base_l_a___6" DataType="boolean" redcap:Variable="lesion_base_l_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_r_a___1.choices" Name="lesion_apex_r_a___1" DataType="boolean" redcap:Variable="lesion_apex_r_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_r_a___2.choices" Name="lesion_apex_r_a___2" DataType="boolean" redcap:Variable="lesion_apex_r_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_r_a___3.choices" Name="lesion_apex_r_a___3" DataType="boolean" redcap:Variable="lesion_apex_r_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_r_a___4.choices" Name="lesion_apex_r_a___4" DataType="boolean" redcap:Variable="lesion_apex_r_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_r_a___5.choices" Name="lesion_apex_r_a___5" DataType="boolean" redcap:Variable="lesion_apex_r_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_r_a___6.choices" Name="lesion_apex_r_a___6" DataType="boolean" redcap:Variable="lesion_apex_r_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_r_a___1.choices" Name="lesion_mid_r_a___1" DataType="boolean" redcap:Variable="lesion_mid_r_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_r_a___2.choices" Name="lesion_mid_r_a___2" DataType="boolean" redcap:Variable="lesion_mid_r_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_r_a___3.choices" Name="lesion_mid_r_a___3" DataType="boolean" redcap:Variable="lesion_mid_r_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_r_a___4.choices" Name="lesion_mid_r_a___4" DataType="boolean" redcap:Variable="lesion_mid_r_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_r_a___5.choices" Name="lesion_mid_r_a___5" DataType="boolean" redcap:Variable="lesion_mid_r_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_r_a___6.choices" Name="lesion_mid_r_a___6" DataType="boolean" redcap:Variable="lesion_mid_r_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_r_a___1.choices" Name="lesion_base_r_a___1" DataType="boolean" redcap:Variable="lesion_base_r_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_r_a___2.choices" Name="lesion_base_r_a___2" DataType="boolean" redcap:Variable="lesion_base_r_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_r_a___3.choices" Name="lesion_base_r_a___3" DataType="boolean" redcap:Variable="lesion_base_r_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_r_a___4.choices" Name="lesion_base_r_a___4" DataType="boolean" redcap:Variable="lesion_base_r_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_r_a___5.choices" Name="lesion_base_r_a___5" DataType="boolean" redcap:Variable="lesion_base_r_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_r_a___6.choices" Name="lesion_base_r_a___6" DataType="boolean" redcap:Variable="lesion_base_r_a" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_t2_b.choices" Name="lesion_t2_b" DataType="text" redcap:Variable="lesion_t2_b">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_dwi_b.choices" Name="lesion_dwi_b" DataType="text" redcap:Variable="lesion_dwi_b">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_extraprostatisk_b.choices" Name="lesion_extraprostatisk_b" DataType="text" redcap:Variable="lesion_extraprostatisk_b">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>nej</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>nej - minimal</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>ja - definitivt</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_pirads_b.choices" Name="lesion_pirads_b" DataType="text" redcap:Variable="lesion_pirads_b">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_l_b___1.choices" Name="lesion_apex_l_b___1" DataType="boolean" redcap:Variable="lesion_apex_l_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_l_b___2.choices" Name="lesion_apex_l_b___2" DataType="boolean" redcap:Variable="lesion_apex_l_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_l_b___3.choices" Name="lesion_apex_l_b___3" DataType="boolean" redcap:Variable="lesion_apex_l_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_l_b___4.choices" Name="lesion_apex_l_b___4" DataType="boolean" redcap:Variable="lesion_apex_l_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_l_b___5.choices" Name="lesion_apex_l_b___5" DataType="boolean" redcap:Variable="lesion_apex_l_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_l_b___6.choices" Name="lesion_apex_l_b___6" DataType="boolean" redcap:Variable="lesion_apex_l_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_l_b___1.choices" Name="lesion_mid_l_b___1" DataType="boolean" redcap:Variable="lesion_mid_l_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_l_b___2.choices" Name="lesion_mid_l_b___2" DataType="boolean" redcap:Variable="lesion_mid_l_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_l_b___3.choices" Name="lesion_mid_l_b___3" DataType="boolean" redcap:Variable="lesion_mid_l_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_l_b___4.choices" Name="lesion_mid_l_b___4" DataType="boolean" redcap:Variable="lesion_mid_l_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_l_b___5.choices" Name="lesion_mid_l_b___5" DataType="boolean" redcap:Variable="lesion_mid_l_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_l_b___6.choices" Name="lesion_mid_l_b___6" DataType="boolean" redcap:Variable="lesion_mid_l_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_l_b___1.choices" Name="lesion_base_l_b___1" DataType="boolean" redcap:Variable="lesion_base_l_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_l_b___2.choices" Name="lesion_base_l_b___2" DataType="boolean" redcap:Variable="lesion_base_l_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_l_b___3.choices" Name="lesion_base_l_b___3" DataType="boolean" redcap:Variable="lesion_base_l_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_l_b___4.choices" Name="lesion_base_l_b___4" DataType="boolean" redcap:Variable="lesion_base_l_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_l_b___5.choices" Name="lesion_base_l_b___5" DataType="boolean" redcap:Variable="lesion_base_l_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_l_b___6.choices" Name="lesion_base_l_b___6" DataType="boolean" redcap:Variable="lesion_base_l_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_r_b___1.choices" Name="lesion_apex_r_b___1" DataType="boolean" redcap:Variable="lesion_apex_r_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_r_b___2.choices" Name="lesion_apex_r_b___2" DataType="boolean" redcap:Variable="lesion_apex_r_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_r_b___3.choices" Name="lesion_apex_r_b___3" DataType="boolean" redcap:Variable="lesion_apex_r_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_r_b___4.choices" Name="lesion_apex_r_b___4" DataType="boolean" redcap:Variable="lesion_apex_r_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_r_b___5.choices" Name="lesion_apex_r_b___5" DataType="boolean" redcap:Variable="lesion_apex_r_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_r_b___6.choices" Name="lesion_apex_r_b___6" DataType="boolean" redcap:Variable="lesion_apex_r_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_r_b___1.choices" Name="lesion_mid_r_b___1" DataType="boolean" redcap:Variable="lesion_mid_r_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_r_b___2.choices" Name="lesion_mid_r_b___2" DataType="boolean" redcap:Variable="lesion_mid_r_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_r_b___3.choices" Name="lesion_mid_r_b___3" DataType="boolean" redcap:Variable="lesion_mid_r_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_r_b___4.choices" Name="lesion_mid_r_b___4" DataType="boolean" redcap:Variable="lesion_mid_r_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_r_b___5.choices" Name="lesion_mid_r_b___5" DataType="boolean" redcap:Variable="lesion_mid_r_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_r_b___6.choices" Name="lesion_mid_r_b___6" DataType="boolean" redcap:Variable="lesion_mid_r_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_r_b___1.choices" Name="lesion_base_r_b___1" DataType="boolean" redcap:Variable="lesion_base_r_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_r_b___2.choices" Name="lesion_base_r_b___2" DataType="boolean" redcap:Variable="lesion_base_r_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_r_b___3.choices" Name="lesion_base_r_b___3" DataType="boolean" redcap:Variable="lesion_base_r_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_r_b___4.choices" Name="lesion_base_r_b___4" DataType="boolean" redcap:Variable="lesion_base_r_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_r_b___5.choices" Name="lesion_base_r_b___5" DataType="boolean" redcap:Variable="lesion_base_r_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_r_b___6.choices" Name="lesion_base_r_b___6" DataType="boolean" redcap:Variable="lesion_base_r_b" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_t2_c.choices" Name="lesion_t2_c" DataType="text" redcap:Variable="lesion_t2_c">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_dwi_c.choices" Name="lesion_dwi_c" DataType="text" redcap:Variable="lesion_dwi_c">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_dce_c.choices" Name="lesion_dce_c" DataType="text" redcap:Variable="lesion_dce_c">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>-</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>+</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_extraprostatisk_c.choices" Name="lesion_extraprostatisk_c" DataType="text" redcap:Variable="lesion_extraprostatisk_c">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>nej</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>nej - minimal</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>ja - definitivt</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_pirads_c.choices" Name="lesion_pirads_c" DataType="text" redcap:Variable="lesion_pirads_c">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_l_c___1.choices" Name="lesion_apex_l_c___1" DataType="boolean" redcap:Variable="lesion_apex_l_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_l_c___2.choices" Name="lesion_apex_l_c___2" DataType="boolean" redcap:Variable="lesion_apex_l_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_l_c___3.choices" Name="lesion_apex_l_c___3" DataType="boolean" redcap:Variable="lesion_apex_l_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_l_c___4.choices" Name="lesion_apex_l_c___4" DataType="boolean" redcap:Variable="lesion_apex_l_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_l_c___5.choices" Name="lesion_apex_l_c___5" DataType="boolean" redcap:Variable="lesion_apex_l_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_l_c___6.choices" Name="lesion_apex_l_c___6" DataType="boolean" redcap:Variable="lesion_apex_l_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_l_c___1.choices" Name="lesion_mid_l_c___1" DataType="boolean" redcap:Variable="lesion_mid_l_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_l_c___2.choices" Name="lesion_mid_l_c___2" DataType="boolean" redcap:Variable="lesion_mid_l_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_l_c___3.choices" Name="lesion_mid_l_c___3" DataType="boolean" redcap:Variable="lesion_mid_l_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_l_c___4.choices" Name="lesion_mid_l_c___4" DataType="boolean" redcap:Variable="lesion_mid_l_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_l_c___5.choices" Name="lesion_mid_l_c___5" DataType="boolean" redcap:Variable="lesion_mid_l_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_l_c___6.choices" Name="lesion_mid_l_c___6" DataType="boolean" redcap:Variable="lesion_mid_l_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_l_c___1.choices" Name="lesion_base_l_c___1" DataType="boolean" redcap:Variable="lesion_base_l_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_l_c___2.choices" Name="lesion_base_l_c___2" DataType="boolean" redcap:Variable="lesion_base_l_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_l_c___3.choices" Name="lesion_base_l_c___3" DataType="boolean" redcap:Variable="lesion_base_l_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_l_c___4.choices" Name="lesion_base_l_c___4" DataType="boolean" redcap:Variable="lesion_base_l_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_l_c___5.choices" Name="lesion_base_l_c___5" DataType="boolean" redcap:Variable="lesion_base_l_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_l_c___6.choices" Name="lesion_base_l_c___6" DataType="boolean" redcap:Variable="lesion_base_l_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_r_c___1.choices" Name="lesion_apex_r_c___1" DataType="boolean" redcap:Variable="lesion_apex_r_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_r_c___2.choices" Name="lesion_apex_r_c___2" DataType="boolean" redcap:Variable="lesion_apex_r_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_r_c___3.choices" Name="lesion_apex_r_c___3" DataType="boolean" redcap:Variable="lesion_apex_r_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_r_c___4.choices" Name="lesion_apex_r_c___4" DataType="boolean" redcap:Variable="lesion_apex_r_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_r_c___5.choices" Name="lesion_apex_r_c___5" DataType="boolean" redcap:Variable="lesion_apex_r_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_apex_r_c___6.choices" Name="lesion_apex_r_c___6" DataType="boolean" redcap:Variable="lesion_apex_r_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_r_c___1.choices" Name="lesion_mid_r_c___1" DataType="boolean" redcap:Variable="lesion_mid_r_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_r_c___2.choices" Name="lesion_mid_r_c___2" DataType="boolean" redcap:Variable="lesion_mid_r_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_r_c___3.choices" Name="lesion_mid_r_c___3" DataType="boolean" redcap:Variable="lesion_mid_r_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_r_c___4.choices" Name="lesion_mid_r_c___4" DataType="boolean" redcap:Variable="lesion_mid_r_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_r_c___5.choices" Name="lesion_mid_r_c___5" DataType="boolean" redcap:Variable="lesion_mid_r_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_mid_r_c___6.choices" Name="lesion_mid_r_c___6" DataType="boolean" redcap:Variable="lesion_mid_r_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_r_c___1.choices" Name="lesion_base_r_c___1" DataType="boolean" redcap:Variable="lesion_base_r_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_r_c___2.choices" Name="lesion_base_r_c___2" DataType="boolean" redcap:Variable="lesion_base_r_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_r_c___3.choices" Name="lesion_base_r_c___3" DataType="boolean" redcap:Variable="lesion_base_r_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_r_c___4.choices" Name="lesion_base_r_c___4" DataType="boolean" redcap:Variable="lesion_base_r_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_r_c___5.choices" Name="lesion_base_r_c___5" DataType="boolean" redcap:Variable="lesion_base_r_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lesion_base_r_c___6.choices" Name="lesion_base_r_c___6" DataType="boolean" redcap:Variable="lesion_base_r_c" redcap:CheckboxChoices="1, CZ / PZpm | 2, PZpl | 3, PZa | 4, TZp | 5, TZa | 6, AS">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="mrgb_antal.choices" Name="mrgb_antal" DataType="text" redcap:Variable="mrgb_antal">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>0</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="mrgb_gleason1_1.choices" Name="mrgb_gleason1_1" DataType="text" redcap:Variable="mrgb_gleason1_1">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="mrgb_gleason2_1.choices" Name="mrgb_gleason2_1" DataType="text" redcap:Variable="mrgb_gleason2_1">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="mrgb_gleason1_2.choices" Name="mrgb_gleason1_2" DataType="text" redcap:Variable="mrgb_gleason1_2">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="mrgb_gleason2_2.choices" Name="mrgb_gleason2_2" DataType="text" redcap:Variable="mrgb_gleason2_2">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="mrgb_gleason1_3.choices" Name="mrgb_gleason1_3" DataType="text" redcap:Variable="mrgb_gleason1_3">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="mrgb_gleason2_3.choices" Name="mrgb_gleason2_3" DataType="text" redcap:Variable="mrgb_gleason2_3">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="mrgb_gleason1_4.choices" Name="mrgb_gleason1_4" DataType="text" redcap:Variable="mrgb_gleason1_4">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="mrgb_gleason2_4.choices" Name="mrgb_gleason2_4" DataType="text" redcap:Variable="mrgb_gleason2_4">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="mrgb_gleason1_5.choices" Name="mrgb_gleason1_5" DataType="text" redcap:Variable="mrgb_gleason1_5">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="mrgb_gleason2_5.choices" Name="mrgb_gleason2_5" DataType="text" redcap:Variable="mrgb_gleason2_5">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="lsion_complete.choices" Name="lsion_complete" DataType="text" redcap:Variable="lsion_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="noter_complete.choices" Name="noter_complete" DataType="text" redcap:Variable="noter_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="flag_complete.choices" Name="flag_complete" DataType="text" redcap:Variable="flag_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+</MetaDataVersion>
+</Study>
+</ODM>
