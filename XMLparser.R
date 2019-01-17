@@ -1,9 +1,15 @@
 library(magrittr)
 library(XML)
+library(tidyverse)
+library(tidygraph)
+library(ggraph)
 
 metaData = xmlParse(file = "U:/Projects/gitlabMOMA/REDCapVisualizer/PRIMA_REDCap.xml", useInternalNodes = TRUE, encoding = "UTF-8")
 metaData = xmlParse(file = "U:/Projects/gitlabMOMA/REDCapVisualizer/PCProjektPAUH_REDCap.xml", useInternalNodes = TRUE, encoding = "UTF-8")
 metaData = xmlParse(file = "U:/Projects/gitlabMOMA/REDCapVisualizer/MDM_.REDCap.xml", useInternalNodes = TRUE, encoding = "UTF-8")
+metaData = xmlParse(file = "U:/Projects/gitlabMOMA/REDCapVisualizer/CopyThomasIMPROVEITI_2019-01-17_1047.REDCap.xml", useInternalNodes = TRUE, encoding = "UTF-8")
+metaData = xmlParse(file = "U:/Projects/gitlabMOMA/REDCapVisualizer/IMPROVETrialImplemen_REDCap.xml", useInternalNodes = TRUE, encoding = "ISO-8859-1")
+
 
 xmltop = metaData %>% xmlRoot
 
@@ -68,12 +74,13 @@ for(i in 1:nrow(nodes)) {
 }
 
 nodes %>% head(10)
-
+branches[23,]
 branchNodes = data.frame(nodeName = branches$to,
                          number = nodes[branches$from %>% match(nodes$nodeName), "number"],
                          from = nodes[branches$to %>% match(nodes$nodeName), "number"],
                          to = nodes[branches$from %>% match(nodes$nodeName), "number"],
-                         type = rep("BranchingLogic", nrow(branches)))
+                         type = rep("BranchingLogic", nrow(branches))) %>% 
+  drop_na
 
 nodes = rbind(nodes, branchNodes)
 
@@ -87,8 +94,9 @@ nodes$mainNode = sapply(nodes$nodeName, function(n) {
 nodes$nCon = sapply(nodes$number, function(i) sum(nodes$from == i) + sum(nodes$to == i))
 
 #either main, or popular, while still in origin
-topPercentage = 0.5
+topPercentage = 0.1
 textLimit = (((nodes %>% subset(main != 4))$nCon %>% max) * topPercentage) %>% ceiling
+(nodes %>% subset(main != 4))$nCon %>% sort %>% table
 
 nodes = nodes %>% cbind(popNodes = ifelse(.[,"type"] == "origin" & (.[,"main"] == 4 | .[,"nCon"] >= textLimit), .[,"nodeName"], ""))
 
@@ -125,6 +133,36 @@ c('star', 'circle', 'gem', 'dh', 'graphopt', 'grid', 'mds',
   'randomly', 'fr', 'kk', 'drl', 'lgl')
 
 
+#branches only
 
+nodes = data.frame(nodeName = unique(branches %>% unlist %>% as.character), stringsAsFactors = FALSE)
+nodes$number = 1:nrow(nodes)
 
+cons = apply(branches, 1, function(r) c(from = match(r[1], nodes$nodeName), to = match(r[2], nodes$nodeName))) %>% 
+  t %>% 
+  as.data.frame %>% 
+  set_colnames(c("from", "to"))
+
+nodes$nCon = sapply(nodes$number, function(i) sum(cons$from == i) + sum(cons$to == i))
+#popular
+topPercentage = 0.1
+textLimit = ((nodes$nCon %>% max) * topPercentage) %>% ceiling
+
+nodes = nodes %>% cbind(popNodes = ifelse(.[,"nCon"] >= textLimit, .[,"nodeName"], ""))
+
+nodes %>% head(10)
+branchStructure <- tbl_graph(
+  nodes = nodes %>% select(number, nodeName, popNodes), 
+  edges = cons,
+  directed = TRUE
+) %>% 
+  mutate(Popularity = centrality_degree(mode = 'in'))
+
+ggraph(branchStructure, layout = "graphopt") + 
+  geom_edge_link(width = 1, color = "grey80") +
+  geom_node_point() +
+  geom_node_text(aes(label = popNodes), repel = TRUE) +
+  theme_graph() +
+  ggtitle((xmltop[["Study"]][["GlobalVariables"]] %>% xmlChildren)[["StudyName"]] %>% xmlValue,
+          subtitle = (xmltop[["Study"]][["GlobalVariables"]] %>% xmlChildren)[["ProjectNotes"]] %>% xmlValue)
 
