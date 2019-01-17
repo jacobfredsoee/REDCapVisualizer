@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ODM xmlns="http://www.cdisc.org/ns/odm/v1.3" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:redcap="https://projectredcap.org" xsi:schemaLocation="http://www.cdisc.org/ns/odm/v1.3 schema/odm/ODM1-3-1.xsd" ODMVersion="1.3.1" FileOID="000-00-0000" FileType="Snapshot" Description="MDM (Molekylær Diagnostiske Metoder)" AsOfDateTime="2019-01-17T10:21:19" CreationDateTime="2019-01-17T10:21:19" SourceSystem="REDCap" SourceSystemVersion="8.5.22">
+<Study OID="Project.MDMMolekylrDiagnostiskeMetoder">
+<GlobalVariables>
+	<StudyName>MDM (Molekylær Diagnostiske Metoder)</StudyName>
+	<StudyDescription>This file contains the metadata, events, and data for REDCap project "MDM (Molekylær Diagnostiske Metoder)".</StudyDescription>
+	<ProtocolName>MDM (Molekylær Diagnostiske Metoder)</ProtocolName>
+	<redcap:RecordAutonumberingEnabled>1</redcap:RecordAutonumberingEnabled>
+	<redcap:CustomRecordLabel>[first-event-name][patient_fnavn] [first-event-name][patient_enavn]</redcap:CustomRecordLabel>
+	<redcap:SecondaryUniqueField>patient_cprnum</redcap:SecondaryUniqueField>
+	<redcap:SchedulingEnabled>0</redcap:SchedulingEnabled>
+	<redcap:Purpose>2</redcap:Purpose>
+	<redcap:PurposeOther>0,1</redcap:PurposeOther>
+	<redcap:ProjectNotes>Udvikling af Molekylær Diagnostiske Metoder for patienter henvist til prostatabiopsi</redcap:ProjectNotes>
+	<redcap:RepeatingInstrumentsAndEvents>
+		<redcap:RepeatingInstruments>
+			<redcap:RepeatingInstrument redcap:UniqueEventName="undersgelser_og_be_arm_1" redcap:RepeatInstrument="psa_mling" redcap:CustomLabel="[psa_dato]: [psa_psa] ng/mL"/>
+			<redcap:RepeatingInstrument redcap:UniqueEventName="undersgelser_og_be_arm_1" redcap:RepeatInstrument="biopsi" redcap:CustomLabel="[biopsi_dato]: [biopsi_svar], [biopsi_positive]/[biopsi_total]"/>
+			<redcap:RepeatingInstrument redcap:UniqueEventName="undersgelser_og_be_arm_1" redcap:RepeatInstrument="mr_scanning" redcap:CustomLabel="[scanning_dato]: [scanning_resultat]"/>
+			<redcap:RepeatingInstrument redcap:UniqueEventName="undersgelser_og_be_arm_1" redcap:RepeatInstrument="behandling" redcap:CustomLabel="[behandling_start]"/>
+		</redcap:RepeatingInstruments>
+		<redcap:RepeatingInstruments>
+			<redcap:RepeatingInstrument redcap:UniqueEventName="noter_arm_1" redcap:RepeatInstrument="noter" redcap:CustomLabel="[noter_dato]: [noter_notat] "/>
+			<redcap:RepeatingInstrument redcap:UniqueEventName="noter_arm_1" redcap:RepeatInstrument="flag" redcap:CustomLabel="[flag_dato]: [flag_problem]"/>
+		</redcap:RepeatingInstruments>
+	</redcap:RepeatingInstrumentsAndEvents>
+</GlobalVariables>
+<MetaDataVersion OID="Metadata.MDMMolekylrDiagnostiskeMetoder_2019-01-17_1021" Name="MDM (Molekylær Diagnostiske Metoder)" redcap:RecordIdField="record_id">
+	<Protocol>
+		<StudyEventRef StudyEventOID="Event.mdm_arm_1" OrderNumber="1" Mandatory="No"/>
+		<StudyEventRef StudyEventOID="Event.undersgelser_og_be_arm_1" OrderNumber="2" Mandatory="No"/>
+		<StudyEventRef StudyEventOID="Event.noter_arm_1" OrderNumber="3" Mandatory="No"/>
+	</Protocol>
+	<StudyEventDef OID="Event.mdm_arm_1" Name="MDM" Type="Common" Repeating="No" redcap:EventName="MDM" redcap:CustomEventLabel="" redcap:UniqueEventName="mdm_arm_1" redcap:ArmNum="1" redcap:ArmName="Arm 1" redcap:DayOffset="1" redcap:OffsetMin="0" redcap:OffsetMax="0">
+		<FormRef FormOID="Form.patient_data" OrderNumber="1" Mandatory="No" redcap:FormName="patient_data"/>
+		<FormRef FormOID="Form.prver" OrderNumber="2" Mandatory="No" redcap:FormName="prver"/>
+		<FormRef FormOID="Form.diagnose" OrderNumber="3" Mandatory="No" redcap:FormName="diagnose"/>
+	</StudyEventDef>
+	<StudyEventDef OID="Event.undersgelser_og_be_arm_1" Name="Undersøgelser og behandlinger" Type="Common" Repeating="No" redcap:EventName="Undersøgelser og behandlinger" redcap:CustomEventLabel="" redcap:UniqueEventName="undersgelser_og_be_arm_1" redcap:ArmNum="1" redcap:ArmName="Arm 1" redcap:DayOffset="2" redcap:OffsetMin="0" redcap:OffsetMax="0">
+		<FormRef FormOID="Form.psa_mling" OrderNumber="1" Mandatory="No" redcap:FormName="psa_mling"/>
+		<FormRef FormOID="Form.biopsi" OrderNumber="2" Mandatory="No" redcap:FormName="biopsi"/>
+		<FormRef FormOID="Form.mr_scanning" OrderNumber="3" Mandatory="No" redcap:FormName="mr_scanning"/>
+		<FormRef FormOID="Form.behandling" OrderNumber="4" Mandatory="No" redcap:FormName="behandling"/>
+	</StudyEventDef>
+	<StudyEventDef OID="Event.noter_arm_1" Name="Noter" Type="Common" Repeating="No" redcap:EventName="Noter" redcap:CustomEventLabel="" redcap:UniqueEventName="noter_arm_1" redcap:ArmNum="1" redcap:ArmName="Arm 1" redcap:DayOffset="3" redcap:OffsetMin="0" redcap:OffsetMax="0">
+		<FormRef FormOID="Form.noter" OrderNumber="1" Mandatory="No" redcap:FormName="noter"/>
+		<FormRef FormOID="Form.flag" OrderNumber="2" Mandatory="No" redcap:FormName="flag"/>
+	</StudyEventDef>
+	<FormDef OID="Form.patient_data" Name="Patient data" Repeating="No" redcap:FormName="patient_data">
+		<ItemGroupRef ItemGroupOID="patient_data.record_id" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="patient_data.patient_data_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.prver" Name="Prøver" Repeating="No" redcap:FormName="prver">
+		<ItemGroupRef ItemGroupOID="prver.samples_type___1" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="prver.prver_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.diagnose" Name="Diagnose" Repeating="No" redcap:FormName="diagnose">
+		<ItemGroupRef ItemGroupOID="diagnose.diagnose_size" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="diagnose.diagnose_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.psa_mling" Name="PSA måling" Repeating="No" redcap:FormName="psa_mling">
+		<ItemGroupRef ItemGroupOID="psa_mling.psa_dato" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="psa_mling.psa_mling_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.biopsi" Name="Biopsi" Repeating="No" redcap:FormName="biopsi">
+		<ItemGroupRef ItemGroupOID="biopsi.biopsi_dato" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="biopsi.biopsi_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.mr_scanning" Name="MR scanning" Repeating="No" redcap:FormName="mr_scanning">
+		<ItemGroupRef ItemGroupOID="mr_scanning.scanning_dato" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="mr_scanning.mr_scanning_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.behandling" Name="Behandling" Repeating="No" redcap:FormName="behandling">
+		<ItemGroupRef ItemGroupOID="behandling.behandling_start" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="behandling.behandling_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.noter" Name="Noter" Repeating="No" redcap:FormName="noter">
+		<ItemGroupRef ItemGroupOID="noter.noter_dato" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="noter.noter_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.flag" Name="Flag" Repeating="No" redcap:FormName="flag">
+		<ItemGroupRef ItemGroupOID="flag.flag_dato" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="flag.flag_complete" Mandatory="No"/>
+	</FormDef>
+	<ItemGroupDef OID="patient_data.record_id" Name="Patient data" Repeating="No">
+		<ItemRef ItemOID="record_id" Mandatory="No" redcap:Variable="record_id"/>
+		<ItemRef ItemOID="patient_cprnum" Mandatory="Yes" redcap:Variable="patient_cprnum"/>
+		<ItemRef ItemOID="patient_fnavn" Mandatory="No" redcap:Variable="patient_fnavn"/>
+		<ItemRef ItemOID="patient_enavn" Mandatory="No" redcap:Variable="patient_enavn"/>
+		<ItemRef ItemOID="patient_ink_dato" Mandatory="No" redcap:Variable="patient_ink_dato"/>
+		<ItemRef ItemOID="patient_samtykke" Mandatory="Yes" redcap:Variable="patient_samtykke"/>
+		<ItemRef ItemOID="patient_samtykke_inform" Mandatory="Yes" redcap:Variable="patient_samtykke_inform"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="patient_data.patient_data_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="patient_data_complete" Mandatory="No" redcap:Variable="patient_data_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="prver.samples_type___1" Name="" Repeating="No">
+		<ItemRef ItemOID="samples_type___1" Mandatory="No" redcap:Variable="samples_type"/>
+		<ItemRef ItemOID="samples_type___2" Mandatory="No" redcap:Variable="samples_type"/>
+		<ItemRef ItemOID="samples_type___3" Mandatory="No" redcap:Variable="samples_type"/>
+		<ItemRef ItemOID="samples_type___4" Mandatory="No" redcap:Variable="samples_type"/>
+		<ItemRef ItemOID="samples_plasma_date" Mandatory="No" redcap:Variable="samples_plasma_date"/>
+		<ItemRef ItemOID="samples_serum_date" Mandatory="No" redcap:Variable="samples_serum_date"/>
+		<ItemRef ItemOID="samples_urin_date" Mandatory="No" redcap:Variable="samples_urin_date"/>
+		<ItemRef ItemOID="samples_tissue_date" Mandatory="No" redcap:Variable="samples_tissue_date"/>
+		<ItemRef ItemOID="samples_plasma_transferred" Mandatory="No" redcap:Variable="samples_plasma_transferred"/>
+		<ItemRef ItemOID="samples_serum_transferred" Mandatory="No" redcap:Variable="samples_serum_transferred"/>
+		<ItemRef ItemOID="samples_urine_transferred" Mandatory="No" redcap:Variable="samples_urine_transferred"/>
+		<ItemRef ItemOID="samples_tissue_transferred" Mandatory="No" redcap:Variable="samples_tissue_transferred"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="prver.prver_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="prver_complete" Mandatory="No" redcap:Variable="prver_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="diagnose.diagnose_size" Name="Diagnose" Repeating="No">
+		<ItemRef ItemOID="diagnose_size" Mandatory="No" redcap:Variable="diagnose_size"/>
+		<ItemRef ItemOID="diagnose_dre_egen" Mandatory="Yes" redcap:Variable="diagnose_dre_egen"/>
+		<ItemRef ItemOID="diagnose_dre_egen_andet" Mandatory="No" redcap:Variable="diagnose_dre_egen_andet"/>
+		<ItemRef ItemOID="diagnose_dre_afdk" Mandatory="Yes" redcap:Variable="diagnose_dre_afdk"/>
+		<ItemRef ItemOID="diagnose_dre_afdk_andet" Mandatory="No" redcap:Variable="diagnose_dre_afdk_andet"/>
+		<ItemRef ItemOID="diagnose_ctstadie" Mandatory="No" redcap:Variable="diagnose_ctstadie"/>
+		<ItemRef ItemOID="diagnose_ctstadie_andet" Mandatory="No" redcap:Variable="diagnose_ctstadie_andet"/>
+		<ItemRef ItemOID="diagnose_pc_dato" Mandatory="No" redcap:Variable="diagnose_pc_dato"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="diagnose.diagnose_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="diagnose_complete" Mandatory="No" redcap:Variable="diagnose_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="psa_mling.psa_dato" Name="PSA måling" Repeating="No">
+		<ItemRef ItemOID="psa_dato" Mandatory="Yes" redcap:Variable="psa_dato"/>
+		<ItemRef ItemOID="psa_alfaprep" Mandatory="No" redcap:Variable="psa_alfaprep"/>
+		<ItemRef ItemOID="psa_psa" Mandatory="Yes" redcap:Variable="psa_psa"/>
+		<ItemRef ItemOID="psa_psa_korrigeret" Mandatory="No" redcap:Variable="psa_psa_korrigeret"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="psa_mling.psa_mling_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="psa_mling_complete" Mandatory="No" redcap:Variable="psa_mling_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="biopsi.biopsi_dato" Name="Biopsi" Repeating="No">
+		<ItemRef ItemOID="biopsi_dato" Mandatory="Yes" redcap:Variable="biopsi_dato"/>
+		<ItemRef ItemOID="biopsi_udfort" Mandatory="Yes" redcap:Variable="biopsi_udfort"/>
+		<ItemRef ItemOID="biopsi_svar" Mandatory="Yes" redcap:Variable="biopsi_svar"/>
+		<ItemRef ItemOID="biopsi_positive" Mandatory="Yes" redcap:Variable="biopsi_positive"/>
+		<ItemRef ItemOID="biopsi_total" Mandatory="Yes" redcap:Variable="biopsi_total"/>
+		<ItemRef ItemOID="biopsi_gleason1" Mandatory="No" redcap:Variable="biopsi_gleason1"/>
+		<ItemRef ItemOID="biopsi_gleason2" Mandatory="No" redcap:Variable="biopsi_gleason2"/>
+		<ItemRef ItemOID="biopsi_gleason_sum" Mandatory="No" redcap:Variable="biopsi_gleason_sum"/>
+		<ItemRef ItemOID="biopsi_gleason_group" Mandatory="No" redcap:Variable="biopsi_gleason_group"/>
+		<ItemRef ItemOID="biopsi_gleason_patolog" Mandatory="No" redcap:Variable="biopsi_gleason_patolog"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="biopsi.biopsi_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="biopsi_complete" Mandatory="No" redcap:Variable="biopsi_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="mr_scanning.scanning_dato" Name="MR scanning" Repeating="No">
+		<ItemRef ItemOID="scanning_dato" Mandatory="Yes" redcap:Variable="scanning_dato"/>
+		<ItemRef ItemOID="scanning_udfort" Mandatory="Yes" redcap:Variable="scanning_udfort"/>
+		<ItemRef ItemOID="scanning_resultat" Mandatory="Yes" redcap:Variable="scanning_resultat"/>
+		<ItemRef ItemOID="scanning_resultat_andre" Mandatory="No" redcap:Variable="scanning_resultat_andre"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="mr_scanning.mr_scanning_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="mr_scanning_complete" Mandatory="No" redcap:Variable="mr_scanning_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="behandling.behandling_start" Name="Behandling" Repeating="No">
+		<ItemRef ItemOID="behandling_start" Mandatory="Yes" redcap:Variable="behandling_start"/>
+		<ItemRef ItemOID="behandling_type___0" Mandatory="Yes" redcap:Variable="behandling_type"/>
+		<ItemRef ItemOID="behandling_type___1" Mandatory="Yes" redcap:Variable="behandling_type"/>
+		<ItemRef ItemOID="behandling_type___2" Mandatory="Yes" redcap:Variable="behandling_type"/>
+		<ItemRef ItemOID="behandling_type___3" Mandatory="Yes" redcap:Variable="behandling_type"/>
+		<ItemRef ItemOID="behandling_type___4" Mandatory="Yes" redcap:Variable="behandling_type"/>
+		<ItemRef ItemOID="behandling_type___5" Mandatory="Yes" redcap:Variable="behandling_type"/>
+		<ItemRef ItemOID="behandling_type___6" Mandatory="Yes" redcap:Variable="behandling_type"/>
+		<ItemRef ItemOID="behandling_type___7" Mandatory="Yes" redcap:Variable="behandling_type"/>
+		<ItemRef ItemOID="behandling_type___99" Mandatory="Yes" redcap:Variable="behandling_type"/>
+		<ItemRef ItemOID="behandling_type_andet" Mandatory="No" redcap:Variable="behandling_type_andet"/>
+		<ItemRef ItemOID="diagnose_ptstadie" Mandatory="No" redcap:Variable="diagnose_ptstadie"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="behandling.behandling_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="behandling_complete" Mandatory="No" redcap:Variable="behandling_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="noter.noter_dato" Name="Noter" Repeating="No">
+		<ItemRef ItemOID="noter_dato" Mandatory="Yes" redcap:Variable="noter_dato"/>
+		<ItemRef ItemOID="noter_notat" Mandatory="Yes" redcap:Variable="noter_notat"/>
+		<ItemRef ItemOID="noter_hvem" Mandatory="No" redcap:Variable="noter_hvem"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="noter.noter_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="noter_complete" Mandatory="No" redcap:Variable="noter_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="flag.flag_dato" Name="Flag" Repeating="No">
+		<ItemRef ItemOID="flag_dato" Mandatory="Yes" redcap:Variable="flag_dato"/>
+		<ItemRef ItemOID="flag_problem" Mandatory="Yes" redcap:Variable="flag_problem"/>
+		<ItemRef ItemOID="flag_hvem" Mandatory="No" redcap:Variable="flag_hvem"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="flag.flag_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="flag_complete" Mandatory="No" redcap:Variable="flag_complete"/>
+	</ItemGroupDef>
+	<ItemDef OID="record_id" Name="record_id" DataType="text" Length="999" redcap:Variable="record_id" redcap:FieldType="text" redcap:Identifier="y">
+		<Question><TranslatedText>MDM #</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="patient_cprnum" Name="patient_cprnum" DataType="text" Length="999" redcap:Variable="patient_cprnum" redcap:FieldType="text" redcap:TextValidationType="dk_cpr_dash" redcap:FieldNote="DDMMÅÅ-SSSS. (Hvis der kopieres direkte fra EPJ, så slet bindestregen og skriv den igen)" redcap:Identifier="y" redcap:RequiredField="y">
+		<Question><TranslatedText>CPR nummer </TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="patient_fnavn" Name="patient_fnavn" DataType="text" Length="999" redcap:Variable="patient_fnavn" redcap:FieldType="text">
+		<Question><TranslatedText>Fornavn(e)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="patient_enavn" Name="patient_enavn" DataType="text" Length="999" redcap:Variable="patient_enavn" redcap:FieldType="text">
+		<Question><TranslatedText>Efternavn</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="patient_ink_dato" Name="patient_ink_dato" DataType="date" Length="999" redcap:Variable="patient_ink_dato" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:FieldNote="Brug 11-11-1911 ved ukendt">
+		<Question><TranslatedText>Inklusionsdato</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="patient_samtykke" Name="patient_samtykke" DataType="text" Length="2" redcap:Variable="patient_samtykke" redcap:FieldType="select" redcap:RequiredField="y">
+		<Question><TranslatedText>Samtykke</TranslatedText></Question>
+		<CodeListRef CodeListOID="patient_samtykke.choices"/>
+	</ItemDef>
+	<ItemDef OID="patient_samtykke_inform" Name="patient_samtykke_inform" DataType="boolean" Length="1" redcap:Variable="patient_samtykke_inform" redcap:FieldType="yesno" redcap:FieldNote="Hvis der ikke er angivet noget, så vælg da &#039;nej&#039;." redcap:RequiredField="y">
+		<Question><TranslatedText>Patienten ønsker at blive informeret om forskningsprojektets resultater samt eventuelle konsekvenser.</TranslatedText></Question>
+		<CodeListRef CodeListOID="patient_samtykke_inform.choices"/>
+	</ItemDef>
+	<ItemDef OID="patient_data_complete" Name="patient_data_complete" DataType="text" Length="1" redcap:Variable="patient_data_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="patient_data_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="samples_type___1" Name="samples_type___1" DataType="boolean" Length="1" redcap:Variable="samples_type" redcap:FieldType="checkbox">
+		<Question><TranslatedText>Prøvetyper indsamlet</TranslatedText></Question>
+		<CodeListRef CodeListOID="samples_type___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="samples_type___2" Name="samples_type___2" DataType="boolean" Length="1" redcap:Variable="samples_type" redcap:FieldType="checkbox">
+		<Question><TranslatedText>Prøvetyper indsamlet</TranslatedText></Question>
+		<CodeListRef CodeListOID="samples_type___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="samples_type___3" Name="samples_type___3" DataType="boolean" Length="1" redcap:Variable="samples_type" redcap:FieldType="checkbox">
+		<Question><TranslatedText>Prøvetyper indsamlet</TranslatedText></Question>
+		<CodeListRef CodeListOID="samples_type___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="samples_type___4" Name="samples_type___4" DataType="boolean" Length="1" redcap:Variable="samples_type" redcap:FieldType="checkbox">
+		<Question><TranslatedText>Prøvetyper indsamlet</TranslatedText></Question>
+		<CodeListRef CodeListOID="samples_type___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="samples_plasma_date" Name="samples_plasma_date" DataType="date" Length="999" redcap:Variable="samples_plasma_date" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:FieldNote="Brug 11-11-1911 ved ukendt" redcap:BranchingLogic="[samples_type(1)] = &#039;1&#039;">
+		<Question><TranslatedText>Dato for plasma</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="samples_serum_date" Name="samples_serum_date" DataType="date" Length="999" redcap:Variable="samples_serum_date" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:FieldNote="Brug 11-11-1911 ved ukendt" redcap:BranchingLogic="[samples_type(2)] = &#039;1&#039;">
+		<Question><TranslatedText>Dato for serum</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="samples_urin_date" Name="samples_urin_date" DataType="date" Length="999" redcap:Variable="samples_urin_date" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:FieldNote="Brug 11-11-1911 ved ukendt" redcap:BranchingLogic="[samples_type(3)] = &#039;1&#039;">
+		<Question><TranslatedText>Dato for urin</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="samples_tissue_date" Name="samples_tissue_date" DataType="date" Length="999" redcap:Variable="samples_tissue_date" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:FieldNote="Brug 11-11-1911 ved ukendt" redcap:BranchingLogic="[samples_type(4)] = &#039;1&#039;">
+		<Question><TranslatedText>Dato for væv</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="samples_plasma_transferred" Name="samples_plasma_transferred" DataType="boolean" Length="1" redcap:Variable="samples_plasma_transferred" redcap:FieldType="yesno" redcap:FieldAnnotation="@HIDDEN @DEFAULT=&#039;0&#039;">
+		<Question><TranslatedText>Plasma samples created in CMCC?</TranslatedText></Question>
+		<CodeListRef CodeListOID="samples_plasma_transferred.choices"/>
+	</ItemDef>
+	<ItemDef OID="samples_serum_transferred" Name="samples_serum_transferred" DataType="boolean" Length="1" redcap:Variable="samples_serum_transferred" redcap:FieldType="yesno" redcap:FieldAnnotation="@HIDDEN @DEFAULT=&#039;0&#039;">
+		<Question><TranslatedText>Serum samples created in CMCC?</TranslatedText></Question>
+		<CodeListRef CodeListOID="samples_serum_transferred.choices"/>
+	</ItemDef>
+	<ItemDef OID="samples_urine_transferred" Name="samples_urine_transferred" DataType="boolean" Length="1" redcap:Variable="samples_urine_transferred" redcap:FieldType="yesno" redcap:FieldAnnotation="@HIDDEN @DEFAULT=&#039;0&#039;">
+		<Question><TranslatedText>Urine samples created in CMCC?</TranslatedText></Question>
+		<CodeListRef CodeListOID="samples_urine_transferred.choices"/>
+	</ItemDef>
+	<ItemDef OID="samples_tissue_transferred" Name="samples_tissue_transferred" DataType="boolean" Length="1" redcap:Variable="samples_tissue_transferred" redcap:FieldType="yesno" redcap:FieldAnnotation="@HIDDEN @DEFAULT=&#039;0&#039;">
+		<Question><TranslatedText>Tissue samples created in CMCC?</TranslatedText></Question>
+		<CodeListRef CodeListOID="samples_tissue_transferred.choices"/>
+	</ItemDef>
+	<ItemDef OID="prver_complete" Name="prver_complete" DataType="text" Length="1" redcap:Variable="prver_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="prver_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="diagnose_size" Name="diagnose_size" DataType="text" Length="999" redcap:Variable="diagnose_size" redcap:FieldType="text">
+		<Question><TranslatedText>Prostata str. Ultralyd (cc)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="diagnose_dre_egen" Name="diagnose_dre_egen" DataType="text" Length="2" redcap:Variable="diagnose_dre_egen" redcap:FieldType="select" redcap:FieldNote="Hvis mere end én værdi, vælg da andet." redcap:RequiredField="y">
+		<Question><TranslatedText>DRE egen læge</TranslatedText></Question>
+		<CodeListRef CodeListOID="diagnose_dre_egen.choices"/>
+	</ItemDef>
+	<ItemDef OID="diagnose_dre_egen_andet" Name="diagnose_dre_egen_andet" DataType="text" Length="999" redcap:Variable="diagnose_dre_egen_andet" redcap:FieldType="textarea" redcap:BranchingLogic="[diagnose_dre_egen] = &#039;99&#039;">
+		<Question><TranslatedText>DRE, egen læge, andet</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="diagnose_dre_afdk" Name="diagnose_dre_afdk" DataType="text" Length="2" redcap:Variable="diagnose_dre_afdk" redcap:FieldType="select" redcap:FieldNote="Hvis mere end én værdi, vælg da andet." redcap:RequiredField="y">
+		<Question><TranslatedText>DRE, afd. K</TranslatedText></Question>
+		<CodeListRef CodeListOID="diagnose_dre_afdk.choices"/>
+	</ItemDef>
+	<ItemDef OID="diagnose_dre_afdk_andet" Name="diagnose_dre_afdk_andet" DataType="text" Length="999" redcap:Variable="diagnose_dre_afdk_andet" redcap:FieldType="textarea" redcap:BranchingLogic="[diagnose_dre_afdk] = &#039;99&#039;">
+		<Question><TranslatedText>DRE, afd. K, andet</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="diagnose_ctstadie" Name="diagnose_ctstadie" DataType="text" Length="2" redcap:Variable="diagnose_ctstadie" redcap:FieldType="select" redcap:FieldNote="Hvis flere end et stadie er angivet, eller det angivet stadie ikke findes på listen, vælg da &quot;andet&quot;">
+		<Question><TranslatedText>Klinisk T-stadie</TranslatedText></Question>
+		<CodeListRef CodeListOID="diagnose_ctstadie.choices"/>
+	</ItemDef>
+	<ItemDef OID="diagnose_ctstadie_andet" Name="diagnose_ctstadie_andet" DataType="text" Length="999" redcap:Variable="diagnose_ctstadie_andet" redcap:FieldType="textarea" redcap:BranchingLogic="[diagnose_ctstadie] = &#039;90&#039;">
+		<Question><TranslatedText>Klinisk T-stadie, andet</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="diagnose_pc_dato" Name="diagnose_pc_dato" DataType="date" Length="999" redcap:Variable="diagnose_pc_dato" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:FieldNote="Brug 11-11-1911 ved ukendt">
+		<Question><TranslatedText>Dato for PC Diagnose</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="diagnose_complete" Name="diagnose_complete" DataType="text" Length="1" redcap:Variable="diagnose_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="diagnose_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="psa_dato" Name="psa_dato" DataType="date" Length="999" redcap:Variable="psa_dato" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:FieldNote="Brug 11-11-1911 ved ukendt&lt;br&gt;Brug PSA ved henvisningen" redcap:RequiredField="y">
+		<Question><TranslatedText>Dato for PSA måling</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="psa_alfaprep" Name="psa_alfaprep" DataType="boolean" Length="1" redcap:Variable="psa_alfaprep" redcap:FieldType="yesno" redcap:FieldAnnotation="@DEFAULT=&#039;0&#039;">
+		<Question><TranslatedText>5-alfa-præp</TranslatedText></Question>
+		<CodeListRef CodeListOID="psa_alfaprep.choices"/>
+	</ItemDef>
+	<ItemDef OID="psa_psa" Name="psa_psa" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="psa_psa" redcap:FieldType="text" redcap:TextValidationType="float" redcap:FieldNote="Ved ukendt skrives 999.9" redcap:RequiredField="y">
+		<Question><TranslatedText>Værdi for PSA (ng/mL)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="psa_psa_korrigeret" Name="psa_psa_korrigeret" DataType="float" Length="999" redcap:Variable="psa_psa_korrigeret" redcap:FieldType="calc" redcap:Calculation="if([psa_alfaprep]=1, [psa_psa]*2,[psa_psa])">
+		<Question><TranslatedText>PSA korrigeret</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="psa_mling_complete" Name="psa_mling_complete" DataType="text" Length="1" redcap:Variable="psa_mling_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="psa_mling_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="biopsi_dato" Name="biopsi_dato" DataType="date" Length="999" redcap:Variable="biopsi_dato" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:FieldNote="Brug 11-11-1911 ved ukendt" redcap:RequiredField="y">
+		<Question><TranslatedText>Dato for biopsi</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="biopsi_udfort" Name="biopsi_udfort" DataType="boolean" Length="1" redcap:Variable="biopsi_udfort" redcap:FieldType="yesno" redcap:FieldNote="Hvis nej, så notér dags dato i feltet &quot;Dato for biopsi&quot;" redcap:RequiredField="y" redcap:FieldAnnotation="@DEFAULT=1">
+		<Question><TranslatedText>Biopsi udført?</TranslatedText></Question>
+		<CodeListRef CodeListOID="biopsi_udfort.choices"/>
+	</ItemDef>
+	<ItemDef OID="biopsi_svar" Name="biopsi_svar" DataType="text" Length="1" redcap:Variable="biopsi_svar" redcap:FieldType="select" redcap:RequiredField="y" redcap:BranchingLogic="[biopsi_udfort] = &#039;1&#039;">
+		<Question><TranslatedText>Biopsi svar</TranslatedText></Question>
+		<CodeListRef CodeListOID="biopsi_svar.choices"/>
+	</ItemDef>
+	<ItemDef OID="biopsi_positive" Name="biopsi_positive" DataType="integer" Length="999" redcap:Variable="biopsi_positive" redcap:FieldType="text" redcap:TextValidationType="int" redcap:FieldNote="Brug 99 ved ukendt" redcap:RequiredField="y" redcap:BranchingLogic="[biopsi_udfort] = &#039;1&#039;">
+		<Question><TranslatedText>Antal positive nåle</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="biopsi_total" Name="biopsi_total" DataType="integer" Length="999" redcap:Variable="biopsi_total" redcap:FieldType="text" redcap:TextValidationType="int" redcap:FieldNote="Brug 99 ved ukendt" redcap:RequiredField="y" redcap:BranchingLogic="[biopsi_udfort] = &#039;1&#039;" redcap:FieldAnnotation="@DEFAULT=&#039;10&#039;">
+		<Question><TranslatedText>Antal nåle i alt</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="biopsi_gleason1" Name="biopsi_gleason1" DataType="text" Length="1" redcap:Variable="biopsi_gleason1" redcap:FieldType="select" redcap:FieldNote="Læsionen med den største samlet Gleason Score bruges her. I tilfælde med flere med samme score, bruges den med højeste primær Gleason" redcap:BranchingLogic="[biopsi_svar] = &#039;1&#039; OR [biopsi_svar] = &#039;4&#039;">
+		<Question><TranslatedText>Diagnostisk Primær Gleason Score</TranslatedText></Question>
+		<CodeListRef CodeListOID="biopsi_gleason1.choices"/>
+	</ItemDef>
+	<ItemDef OID="biopsi_gleason2" Name="biopsi_gleason2" DataType="text" Length="1" redcap:Variable="biopsi_gleason2" redcap:FieldType="select" redcap:FieldNote="Læsionen med den største samlet Gleason Score bruges her. I tilfælde med flere med samme score, bruges den med højeste primær Gleason" redcap:BranchingLogic="[biopsi_svar] = &#039;1&#039; OR [biopsi_svar] = &#039;4&#039;">
+		<Question><TranslatedText>Diagnostisk Sekundær Gleason Score</TranslatedText></Question>
+		<CodeListRef CodeListOID="biopsi_gleason2.choices"/>
+	</ItemDef>
+	<ItemDef OID="biopsi_gleason_sum" Name="biopsi_gleason_sum" DataType="text" Length="2" redcap:Variable="biopsi_gleason_sum" redcap:FieldType="select" redcap:BranchingLogic="[biopsi_svar] = &#039;1&#039; OR [biopsi_svar] = &#039;4&#039;" redcap:FieldAnnotation="@DEFAULT=&#039;[biopsi_gleason1]+[biopsi_gleason2]&#039;">
+		<Question><TranslatedText>Diagnostisk Samlet Gleason Score</TranslatedText></Question>
+		<CodeListRef CodeListOID="biopsi_gleason_sum.choices"/>
+	</ItemDef>
+	<ItemDef OID="biopsi_gleason_group" Name="biopsi_gleason_group" DataType="text" Length="2" redcap:Variable="biopsi_gleason_group" redcap:FieldType="select" redcap:BranchingLogic="[biopsi_svar] = &#039;1&#039; OR [biopsi_svar] = &#039;4&#039;">
+		<Question><TranslatedText>Diagnostisk Gleason ISUP 2014 grade group i biopsi.
+
+Grade group 1: Gleason score &lt;  = 6
+Grade group 2: Gleason score 3 + 4 = 7
+Grade group 3: Gleason score 4 + 3 = 7
+Grade group 4: Gleason score 4 + 4 = 8, 3 + 5 = 8, 5 + 3 = 8
+Grade group 5: Gleason score 9 and 10</TranslatedText><redcap:FormattedTranslatedText>Diagnostisk Gleason ISUP 2014 grade group i biopsi.
+
+&lt;font size =&quot;1.5&quot;&gt;Grade group 1: Gleason score &lt;  = 6
+Grade group 2: Gleason score 3 + 4 = 7
+Grade group 3: Gleason score 4 + 3 = 7
+Grade group 4: Gleason score 4 + 4 = 8, 3 + 5 = 8, 5 + 3 = 8
+Grade group 5: Gleason score 9 and 10&lt;/font&gt;</redcap:FormattedTranslatedText></Question>
+		<CodeListRef CodeListOID="biopsi_gleason_group.choices"/>
+	</ItemDef>
+	<ItemDef OID="biopsi_gleason_patolog" Name="biopsi_gleason_patolog" DataType="text" Length="999" redcap:Variable="biopsi_gleason_patolog" redcap:FieldType="textarea" redcap:FieldNote="Bruges hvis patologen har skrevet mere end ét Gleason mønstre" redcap:BranchingLogic="[biopsi_svar] = &#039;1&#039; OR [biopsi_svar] = &#039;4&#039;">
+		<Question><TranslatedText>Patologens gleason beskrivelse</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="biopsi_complete" Name="biopsi_complete" DataType="text" Length="1" redcap:Variable="biopsi_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="biopsi_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="scanning_dato" Name="scanning_dato" DataType="date" Length="999" redcap:Variable="scanning_dato" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:FieldNote="Brug 11-11-1911 ved ukendt" redcap:RequiredField="y">
+		<Question><TranslatedText>Dato for MR scanning</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="scanning_udfort" Name="scanning_udfort" DataType="boolean" Length="1" redcap:Variable="scanning_udfort" redcap:FieldType="yesno" redcap:FieldNote="Hvis nej, så notér dags dato i feltet &quot;Dato for MR scanning&quot;" redcap:RequiredField="y" redcap:FieldAnnotation="@DEFAULT=1">
+		<Question><TranslatedText>MR scanning udført</TranslatedText></Question>
+		<CodeListRef CodeListOID="scanning_udfort.choices"/>
+	</ItemDef>
+	<ItemDef OID="scanning_resultat" Name="scanning_resultat" DataType="text" Length="1" redcap:Variable="scanning_resultat" redcap:FieldType="select" redcap:RequiredField="y" redcap:BranchingLogic="[scanning_udfort] = &#039;1&#039;">
+		<Question><TranslatedText>Resultat af scanning (PiRADS), højeste score.</TranslatedText></Question>
+		<CodeListRef CodeListOID="scanning_resultat.choices"/>
+	</ItemDef>
+	<ItemDef OID="scanning_resultat_andre" Name="scanning_resultat_andre" DataType="text" Length="999" redcap:Variable="scanning_resultat_andre" redcap:FieldType="textarea" redcap:BranchingLogic="[scanning_udfort] = &#039;1&#039;">
+		<Question><TranslatedText>Andre PiRADS scores fra scanning</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mr_scanning_complete" Name="mr_scanning_complete" DataType="text" Length="1" redcap:Variable="mr_scanning_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="mr_scanning_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="behandling_start" Name="behandling_start" DataType="date" Length="999" redcap:Variable="behandling_start" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:RequiredField="y">
+		<Question><TranslatedText>Behandling start</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="behandling_type___0" Name="behandling_type___0" DataType="boolean" Length="1" redcap:Variable="behandling_type" redcap:FieldType="checkbox" redcap:FieldNote="I tilfælde af ingen behandling skriv dags dato på som behandling start" redcap:RequiredField="y">
+		<Question><TranslatedText>Behandlingstype</TranslatedText></Question>
+		<CodeListRef CodeListOID="behandling_type___0.choices"/>
+	</ItemDef>
+	<ItemDef OID="behandling_type___1" Name="behandling_type___1" DataType="boolean" Length="1" redcap:Variable="behandling_type" redcap:FieldType="checkbox" redcap:FieldNote="I tilfælde af ingen behandling skriv dags dato på som behandling start" redcap:RequiredField="y">
+		<Question><TranslatedText>Behandlingstype</TranslatedText></Question>
+		<CodeListRef CodeListOID="behandling_type___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="behandling_type___2" Name="behandling_type___2" DataType="boolean" Length="1" redcap:Variable="behandling_type" redcap:FieldType="checkbox" redcap:FieldNote="I tilfælde af ingen behandling skriv dags dato på som behandling start" redcap:RequiredField="y">
+		<Question><TranslatedText>Behandlingstype</TranslatedText></Question>
+		<CodeListRef CodeListOID="behandling_type___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="behandling_type___3" Name="behandling_type___3" DataType="boolean" Length="1" redcap:Variable="behandling_type" redcap:FieldType="checkbox" redcap:FieldNote="I tilfælde af ingen behandling skriv dags dato på som behandling start" redcap:RequiredField="y">
+		<Question><TranslatedText>Behandlingstype</TranslatedText></Question>
+		<CodeListRef CodeListOID="behandling_type___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="behandling_type___4" Name="behandling_type___4" DataType="boolean" Length="1" redcap:Variable="behandling_type" redcap:FieldType="checkbox" redcap:FieldNote="I tilfælde af ingen behandling skriv dags dato på som behandling start" redcap:RequiredField="y">
+		<Question><TranslatedText>Behandlingstype</TranslatedText></Question>
+		<CodeListRef CodeListOID="behandling_type___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="behandling_type___5" Name="behandling_type___5" DataType="boolean" Length="1" redcap:Variable="behandling_type" redcap:FieldType="checkbox" redcap:FieldNote="I tilfælde af ingen behandling skriv dags dato på som behandling start" redcap:RequiredField="y">
+		<Question><TranslatedText>Behandlingstype</TranslatedText></Question>
+		<CodeListRef CodeListOID="behandling_type___5.choices"/>
+	</ItemDef>
+	<ItemDef OID="behandling_type___6" Name="behandling_type___6" DataType="boolean" Length="1" redcap:Variable="behandling_type" redcap:FieldType="checkbox" redcap:FieldNote="I tilfælde af ingen behandling skriv dags dato på som behandling start" redcap:RequiredField="y">
+		<Question><TranslatedText>Behandlingstype</TranslatedText></Question>
+		<CodeListRef CodeListOID="behandling_type___6.choices"/>
+	</ItemDef>
+	<ItemDef OID="behandling_type___7" Name="behandling_type___7" DataType="boolean" Length="1" redcap:Variable="behandling_type" redcap:FieldType="checkbox" redcap:FieldNote="I tilfælde af ingen behandling skriv dags dato på som behandling start" redcap:RequiredField="y">
+		<Question><TranslatedText>Behandlingstype</TranslatedText></Question>
+		<CodeListRef CodeListOID="behandling_type___7.choices"/>
+	</ItemDef>
+	<ItemDef OID="behandling_type___99" Name="behandling_type___99" DataType="boolean" Length="1" redcap:Variable="behandling_type" redcap:FieldType="checkbox" redcap:FieldNote="I tilfælde af ingen behandling skriv dags dato på som behandling start" redcap:RequiredField="y">
+		<Question><TranslatedText>Behandlingstype</TranslatedText></Question>
+		<CodeListRef CodeListOID="behandling_type___99.choices"/>
+	</ItemDef>
+	<ItemDef OID="behandling_type_andet" Name="behandling_type_andet" DataType="text" Length="999" redcap:Variable="behandling_type_andet" redcap:FieldType="textarea" redcap:BranchingLogic="[behandling_type(99)] = &#039;1&#039;">
+		<Question><TranslatedText>Behandlingstype andet</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="diagnose_ptstadie" Name="diagnose_ptstadie" DataType="text" Length="2" redcap:Variable="diagnose_ptstadie" redcap:FieldType="select" redcap:BranchingLogic="[behandling_type(3)] = &#039;1&#039; or [behandling_type(99)] = &#039;1&#039;">
+		<Question><TranslatedText>Patologisk T-stadie (hvis RP)</TranslatedText></Question>
+		<CodeListRef CodeListOID="diagnose_ptstadie.choices"/>
+	</ItemDef>
+	<ItemDef OID="behandling_complete" Name="behandling_complete" DataType="text" Length="1" redcap:Variable="behandling_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="behandling_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="noter_dato" Name="noter_dato" DataType="date" Length="999" redcap:Variable="noter_dato" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:FieldNote="Brug 11-11-1911 ved ukendt" redcap:RequiredField="y" redcap:FieldAnnotation="@TODAY @READONLY">
+		<Question><TranslatedText>Dato for notat</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="noter_notat" Name="noter_notat" DataType="text" Length="999" redcap:Variable="noter_notat" redcap:FieldType="textarea" redcap:RequiredField="y">
+		<Question><TranslatedText>Notat</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="noter_hvem" Name="noter_hvem" DataType="text" Length="999" redcap:Variable="noter_hvem" redcap:FieldType="text" redcap:FieldAnnotation="@USERNAME @READONLY">
+		<Question><TranslatedText>Note oprettet af</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="noter_complete" Name="noter_complete" DataType="text" Length="1" redcap:Variable="noter_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="noter_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="flag_dato" Name="flag_dato" DataType="date" Length="999" redcap:Variable="flag_dato" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:RequiredField="y" redcap:FieldAnnotation="@TODAY @READONLY">
+		<Question><TranslatedText>Dato for flag</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="flag_problem" Name="flag_problem" DataType="text" Length="999" redcap:Variable="flag_problem" redcap:FieldType="textarea" redcap:RequiredField="y">
+		<Question><TranslatedText>Problem</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="flag_hvem" Name="flag_hvem" DataType="text" Length="999" redcap:Variable="flag_hvem" redcap:FieldType="text" redcap:FieldAnnotation="@USERNAME @READONLY">
+		<Question><TranslatedText>Oprettet af</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="flag_complete" Name="flag_complete" DataType="text" Length="1" redcap:Variable="flag_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="flag_complete.choices"/>
+	</ItemDef>
+	<CodeList OID="patient_samtykke.choices" Name="patient_samtykke" DataType="text" redcap:Variable="patient_samtykke">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Nej</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Ja</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="15"><Decode><TranslatedText>Ja, men tilbagetrukket</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="patient_samtykke_inform.choices" Name="patient_samtykke_inform" DataType="boolean" redcap:Variable="patient_samtykke_inform">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="patient_data_complete.choices" Name="patient_data_complete" DataType="text" redcap:Variable="patient_data_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="samples_type___1.choices" Name="samples_type___1" DataType="boolean" redcap:Variable="samples_type" redcap:CheckboxChoices="1, Plasma|2, Serum|3, Urin|4, Væv">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="samples_type___2.choices" Name="samples_type___2" DataType="boolean" redcap:Variable="samples_type" redcap:CheckboxChoices="1, Plasma|2, Serum|3, Urin|4, Væv">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="samples_type___3.choices" Name="samples_type___3" DataType="boolean" redcap:Variable="samples_type" redcap:CheckboxChoices="1, Plasma|2, Serum|3, Urin|4, Væv">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="samples_type___4.choices" Name="samples_type___4" DataType="boolean" redcap:Variable="samples_type" redcap:CheckboxChoices="1, Plasma|2, Serum|3, Urin|4, Væv">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="samples_plasma_transferred.choices" Name="samples_plasma_transferred" DataType="boolean" redcap:Variable="samples_plasma_transferred">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="samples_serum_transferred.choices" Name="samples_serum_transferred" DataType="boolean" redcap:Variable="samples_serum_transferred">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="samples_urine_transferred.choices" Name="samples_urine_transferred" DataType="boolean" redcap:Variable="samples_urine_transferred">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="samples_tissue_transferred.choices" Name="samples_tissue_transferred" DataType="boolean" redcap:Variable="samples_tissue_transferred">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="prver_complete.choices" Name="prver_complete" DataType="text" redcap:Variable="prver_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="diagnose_dre_egen.choices" Name="diagnose_dre_egen" DataType="text" redcap:Variable="diagnose_dre_egen">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>negativ (0)</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>positiv (1)</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="9"><Decode><TranslatedText>ikke udført (9)</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="99"><Decode><TranslatedText>andet</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="diagnose_dre_afdk.choices" Name="diagnose_dre_afdk" DataType="text" redcap:Variable="diagnose_dre_afdk">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>negativ (0)</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>positiv (1)</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="9"><Decode><TranslatedText>ikke udført (9)</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="99"><Decode><TranslatedText>andet</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="diagnose_ctstadie.choices" Name="diagnose_ctstadie" DataType="text" redcap:Variable="diagnose_ctstadie">
+		<CodeListItem CodedValue="11"><Decode><TranslatedText>cT1a - histologisk påvist cancer i ≤ 5% af transuretralt reseceret prostata væv</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="12"><Decode><TranslatedText>cT1b - histologisk påvist cancer i &gt; 5% af transuretralt reseceret prostata væv</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="13"><Decode><TranslatedText>cT1c - histologisk cancer påvist ved nålebiopsi</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="21"><Decode><TranslatedText>cT2a - Tumor involverer halvdelen eller mindre af den ene prostatahalvdel</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="22"><Decode><TranslatedText>cT2b - Tumor involverer mere end halvdelen af den ene prostatahalvdel</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="23"><Decode><TranslatedText>cT2c - Tumor involverer begge halvdele af prostata</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="31"><Decode><TranslatedText>cT3a - Ekstrakapsulær tumorvækst</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="32"><Decode><TranslatedText>cT3b - Tumor indvækst i vesicula(e) seminalis</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>T4 - Tumor er fikseret eller vokser ind i naboorganer (ikke vesiculae seminalis) ex. externe sphincter, rectum, bækkenvæg</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="9"><Decode><TranslatedText>X - ukendt</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="90"><Decode><TranslatedText>andet</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="99"><Decode><TranslatedText>Benign</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="diagnose_complete.choices" Name="diagnose_complete" DataType="text" redcap:Variable="diagnose_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="psa_alfaprep.choices" Name="psa_alfaprep" DataType="boolean" redcap:Variable="psa_alfaprep">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="psa_mling_complete.choices" Name="psa_mling_complete" DataType="text" redcap:Variable="psa_mling_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="biopsi_udfort.choices" Name="biopsi_udfort" DataType="boolean" redcap:Variable="biopsi_udfort">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="biopsi_svar.choices" Name="biopsi_svar" DataType="text" redcap:Variable="biopsi_svar">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Negativ</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Positiv</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>HG-PIN</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>MR-Negativ</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>MR-Positiv</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="9"><Decode><TranslatedText>Ukendt</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="biopsi_gleason1.choices" Name="biopsi_gleason1" DataType="text" redcap:Variable="biopsi_gleason1">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="9"><Decode><TranslatedText>Ukendt</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="biopsi_gleason2.choices" Name="biopsi_gleason2" DataType="text" redcap:Variable="biopsi_gleason2">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="9"><Decode><TranslatedText>Ukendt</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="biopsi_gleason_sum.choices" Name="biopsi_gleason_sum" DataType="text" redcap:Variable="biopsi_gleason_sum">
+		<CodeListItem CodedValue="6"><Decode><TranslatedText>6</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="7"><Decode><TranslatedText>7</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="8"><Decode><TranslatedText>8</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="9"><Decode><TranslatedText>9</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="10"><Decode><TranslatedText>10</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="18"><Decode><TranslatedText>Ukendt</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="biopsi_gleason_group.choices" Name="biopsi_gleason_group" DataType="text" redcap:Variable="biopsi_gleason_group">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="99"><Decode><TranslatedText>Ukendt</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="biopsi_complete.choices" Name="biopsi_complete" DataType="text" redcap:Variable="biopsi_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="scanning_udfort.choices" Name="scanning_udfort" DataType="boolean" redcap:Variable="scanning_udfort">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="scanning_resultat.choices" Name="scanning_resultat" DataType="text" redcap:Variable="scanning_resultat">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>PiRADS 1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>PiRADS 2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>PiRADS 3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>PiRADS 4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>PiRADS 5</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="9"><Decode><TranslatedText>Ukendt</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="mr_scanning_complete.choices" Name="mr_scanning_complete" DataType="text" redcap:Variable="mr_scanning_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="behandling_type___0.choices" Name="behandling_type___0" DataType="boolean" redcap:Variable="behandling_type" redcap:CheckboxChoices="0, Ingen behandling | 1, Antiandrogen | 2, Active Surveillance | 3, Radikal Prostatektomi | 4, Kurativ Intenderet Strålebehandling | 5, Watchful Waiting | 6, Medicinsk Kastration | 7, Bicalutamid | 99, Andet">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="behandling_type___1.choices" Name="behandling_type___1" DataType="boolean" redcap:Variable="behandling_type" redcap:CheckboxChoices="0, Ingen behandling | 1, Antiandrogen | 2, Active Surveillance | 3, Radikal Prostatektomi | 4, Kurativ Intenderet Strålebehandling | 5, Watchful Waiting | 6, Medicinsk Kastration | 7, Bicalutamid | 99, Andet">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="behandling_type___2.choices" Name="behandling_type___2" DataType="boolean" redcap:Variable="behandling_type" redcap:CheckboxChoices="0, Ingen behandling | 1, Antiandrogen | 2, Active Surveillance | 3, Radikal Prostatektomi | 4, Kurativ Intenderet Strålebehandling | 5, Watchful Waiting | 6, Medicinsk Kastration | 7, Bicalutamid | 99, Andet">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="behandling_type___3.choices" Name="behandling_type___3" DataType="boolean" redcap:Variable="behandling_type" redcap:CheckboxChoices="0, Ingen behandling | 1, Antiandrogen | 2, Active Surveillance | 3, Radikal Prostatektomi | 4, Kurativ Intenderet Strålebehandling | 5, Watchful Waiting | 6, Medicinsk Kastration | 7, Bicalutamid | 99, Andet">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="behandling_type___4.choices" Name="behandling_type___4" DataType="boolean" redcap:Variable="behandling_type" redcap:CheckboxChoices="0, Ingen behandling | 1, Antiandrogen | 2, Active Surveillance | 3, Radikal Prostatektomi | 4, Kurativ Intenderet Strålebehandling | 5, Watchful Waiting | 6, Medicinsk Kastration | 7, Bicalutamid | 99, Andet">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="behandling_type___5.choices" Name="behandling_type___5" DataType="boolean" redcap:Variable="behandling_type" redcap:CheckboxChoices="0, Ingen behandling | 1, Antiandrogen | 2, Active Surveillance | 3, Radikal Prostatektomi | 4, Kurativ Intenderet Strålebehandling | 5, Watchful Waiting | 6, Medicinsk Kastration | 7, Bicalutamid | 99, Andet">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="behandling_type___6.choices" Name="behandling_type___6" DataType="boolean" redcap:Variable="behandling_type" redcap:CheckboxChoices="0, Ingen behandling | 1, Antiandrogen | 2, Active Surveillance | 3, Radikal Prostatektomi | 4, Kurativ Intenderet Strålebehandling | 5, Watchful Waiting | 6, Medicinsk Kastration | 7, Bicalutamid | 99, Andet">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="behandling_type___7.choices" Name="behandling_type___7" DataType="boolean" redcap:Variable="behandling_type" redcap:CheckboxChoices="0, Ingen behandling | 1, Antiandrogen | 2, Active Surveillance | 3, Radikal Prostatektomi | 4, Kurativ Intenderet Strålebehandling | 5, Watchful Waiting | 6, Medicinsk Kastration | 7, Bicalutamid | 99, Andet">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="behandling_type___99.choices" Name="behandling_type___99" DataType="boolean" redcap:Variable="behandling_type" redcap:CheckboxChoices="0, Ingen behandling | 1, Antiandrogen | 2, Active Surveillance | 3, Radikal Prostatektomi | 4, Kurativ Intenderet Strålebehandling | 5, Watchful Waiting | 6, Medicinsk Kastration | 7, Bicalutamid | 99, Andet">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="diagnose_ptstadie.choices" Name="diagnose_ptstadie" DataType="text" redcap:Variable="diagnose_ptstadie">
+		<CodeListItem CodedValue="11"><Decode><TranslatedText>pT1c</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>pT2X</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="21"><Decode><TranslatedText>pT2a</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="22"><Decode><TranslatedText>pT2b</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="23"><Decode><TranslatedText>pT2c</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>pT3X</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="31"><Decode><TranslatedText>pT3a</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="32"><Decode><TranslatedText>pT3b</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>pT4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="9"><Decode><TranslatedText>X</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="behandling_complete.choices" Name="behandling_complete" DataType="text" redcap:Variable="behandling_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="noter_complete.choices" Name="noter_complete" DataType="text" redcap:Variable="noter_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="flag_complete.choices" Name="flag_complete" DataType="text" redcap:Variable="flag_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+</MetaDataVersion>
+</Study>
+</ODM>

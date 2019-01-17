@@ -5,6 +5,7 @@ library(ggraph)
 #devtools::install_github("kassambara/navdata")
 library("navdata")
 
+#http://www.sthda.com/english/articles/33-social-network-analysis/136-network-analysis-and-manipulation-using-r/
 
 data("phone.call2")
 phone.net <- tbl_graph(
